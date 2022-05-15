@@ -8,24 +8,24 @@ pregunta2('Sentimientos de culpa').
 pregunta3('Suicidio').
 pregunta4('Insomnio precoz').
 pregunta5('Insomnio intermedio').
-pregunta6('Insomnio tardío ').
+pregunta6('Insomnio tardÃ­o ').
 pregunta7('Trabajo y actividades').
-pregunta8('Inhibición psicomotora a (lentitud de pensamiento y lenguaje, facultad de concentración disminuida, disminución de la actividad motora)').
-pregunta9('Agitación psicomotora').
-pregunta10('Ansiedad psíquica').
-pregunta11('Ansiedad somática (signos físicos de ansiedad, gastrointestinales: sequedad de boca, diarrea, eructos, indigestión, etc; cardiovasculares: palpitaciones, cefaleas; respiratorios: hiperventilación, suspiros; frecuencia de micción incrementada; transpiración)').
-pregunta12('Síntomas somáticos gastrointestinales').
-pregunta13('Síntomas somáticos generales ').
-pregunta14('Síntomas genitales (tales como: disminución de la libido y trastornos menstruales)').
-pregunta15('Hipocondría').
-pregunta16('Pérdida de peso').
-pregunta17('Introspeccción (insight)').
+pregunta8('InhibiciÃ³n psicomotora a (lentitud de pensamiento y lenguaje, facultad de concentraciÃ³n disminuida, disminuciÃ³n de la actividad motora)').
+pregunta9('AgitaciÃ³n psicomotora').
+pregunta10('Ansiedad psÃ­quica').
+pregunta11('Ansiedad somÃ¡tica (signos fÃ­sicos de ansiedad, gastrointestinales: sequedad de boca, diarrea, eructos, indigestiÃ³n, etc; cardiovasculares: palpitaciones, cefaleas; respiratorios: hiperventilaciÃ³n, suspiros; frecuencia de micciÃ³n incrementada; transpiraciÃ³n)').
+pregunta12('SÃ­ntomas somÃ¡ticos gastrointestinales').
+pregunta13('SÃ­ntomas somÃ¡ticos generales ').
+pregunta14('SÃ­ntomas genitales (tales como: disminuciÃ³n de la libido y trastornos menstruales)').
+pregunta15('HipocondrÃ­a').
+pregunta16('PÃ©rdida de peso').
+pregunta17('IntrospeccciÃ³n (insight)').
 
 respuesta1(0,'Ausente').
 respuesta1(1,'Estas sensaciones las expresa solamente si le preguntan como se siente').
-respuesta1(2,'Estas sensaciones las relata espontáneamente').
-respuesta1(3,'Sensaciones no comunicadas verbalmente (expresión facial, postura, voz, tendencia al llanto)').
-respuesta1(4,'Manifiesta estas sensaciones en su comunicación verbal y no verbal en forma espontánea').
+respuesta1(2,'Estas sensaciones las relata espontÃ¡neamente').
+respuesta1(3,'Sensaciones no comunicadas verbalmente (expresiÃ³n facial, postura, voz, tendencia al llanto)').
+respuesta1(4,'Manifiesta estas sensaciones en su comunicaciÃ³n verbal y no verbal en forma espontÃ¡nea').
 
 respuesta2(0,'Ausente').
 respuesta2(1,'Se culpa a si mismo, cree haber decepcionado a la gente').
@@ -35,17 +35,17 @@ respuesta2(4,'Oye voces acusatorias o de denuncia y/o experimenta alucinaciones 
 
 respuesta3(0,'Ausente').
 respuesta3(1,'Le parece que la vida no vale la pena ser vivida').
-respuesta3(2,'Desearía estar muerto o tiene pensamientos sobre la posibilidad de morirse').
+respuesta3(2,'DesearÃ­a estar muerto o tiene pensamientos sobre la posibilidad de morirse').
 respuesta3(3,'Ideas de suicidio o amenazas').
 respuesta3(4,'Intentos de suicidio (cualquier intento serio)').
 
 respuesta4(0,'No tiene dificultad').
-respuesta4(1,'Dificultad ocasional para dormir, por ej. más de media hora el conciliar el sueño').
+respuesta4(1,'Dificultad ocasional para dormir, por ej. mÃ¡s de media hora el conciliar el sueÃ±o').
 respuesta4(2,'Dificultad para dormir cada noche').
 
 respuesta5(0,'No hay dificultad').
 respuesta5(1,'Esta desvelado e inquieto o se despierta varias veces durante la noche').
-respuesta5(2,'Esta despierto durante la noche, cualquier ocasión de levantarse de la cama se clasifica en 2 (excepto por motivos de evacuar)').
+respuesta5(2,'Esta despierto durante la noche, cualquier ocasiÃ³n de levantarse de la cama se clasifica en 2 (excepto por motivos de evacuar)').
 
 respuesta6(0,'No hay dificultad').
 respuesta6(1,'Se despierta a primeras horas de la madrugada, pero se vuelve a dormir').
@@ -53,9 +53,9 @@ respuesta6(2,'No puede volver a dormirse si se levanta de la cama').
 
 respuesta7(0,'No hay dificultad').
 respuesta7(1,'Ideas y sentimientos de incapacidad, fatiga o debilidad (trabajos, pasatiempos)').
-respuesta7(2,'Pérdida de interés en su actividad (disminución de la atención, indecisión y vacilación)').
-respuesta7(3,'Disminución del tiempo actual dedicado a actividades o disminución de la productividad').
-respuesta7(4,'Dejó de trabajar por la presente enfermedad. Solo se compromete en las pequeñas tareas, o no puede realizar estas sin ayuda.').
+respuesta7(2,'PÃ©rdida de interÃ©s en su actividad (disminuciÃ³n de la atenciÃ³n, indecisiÃ³n y vacilaciÃ³n)').
+respuesta7(3,'DisminuciÃ³n del tiempo actual dedicado a actividades o disminuciÃ³n de la productividad').
+respuesta7(4,'DejÃ³ de trabajar por la presente enfermedad. Solo se compromete en las pequeÃ±as tareas, o no puede realizar estas sin ayuda.').
 
 respuesta8(0,'Palabra y pensamiento normales').
 respuesta8(1,'Ligero retraso en el habla').
@@ -67,12 +67,12 @@ respuesta9(0,'Ninguna').
 respuesta9(1,'Juega con sus dedos').
 respuesta9(2,'Juega con sus manos, cabello, etc.').
 respuesta9(3,'No puede quedarse quieto ni permanecer sentado').
-respuesta9(4,'Retuerce las manos, se muerde las uñas, se tira de los cabellos, se muerde los labios').
+respuesta9(4,'Retuerce las manos, se muerde las uÃ±as, se tira de los cabellos, se muerde los labios').
 
 respuesta10(0,'No hay dificultad').
-respuesta10(1,'Tensión subjetiva e irritabilidad').
-respuesta10(2,'Preocupación por pequeñas cosas').
-respuesta10(3,'Actitud aprensiva en la expresión o en el habla').
+respuesta10(1,'TensiÃ³n subjetiva e irritabilidad').
+respuesta10(2,'PreocupaciÃ³n por pequeÃ±as cosas').
+respuesta10(3,'Actitud aprensiva en la expresiÃ³n o en el habla').
 respuesta10(4,'Expresa sus temores sin que le pregunten').
 
 respuesta11(0,'Ausente').
@@ -82,17 +82,17 @@ respuesta11(3,'Severa').
 respuesta11(4,'Incapacitante').
 
 respuesta12(0,'Ninguno').
-respuesta12(1,'Pérdida del apetito pero come sin necesidad de que lo estimulen.').
-respuesta12(2,'Sensación de pesadez en el abdomen').
+respuesta12(1,'PÃ©rdida del apetito pero come sin necesidad de que lo estimulen.').
+respuesta12(2,'SensaciÃ³n de pesadez en el abdomen').
 respuesta12(3,'Dificultad en comer si no se le insiste.').
-respuesta12(4,'Solicita laxantes o medicación intestinal para sus síntomas gastrointestinales').
+respuesta12(4,'Solicita laxantes o medicaciÃ³n intestinal para sus sÃ­ntomas gastrointestinales').
 
 respuesta13(0,'Ninguno').
 respuesta13(1,'Pesadez en las extremidades, espalda o cabeza. Dorsalgias. Cefaleas, algias musculares.').
-respuesta13(2,'Pérdida de energía y fatigabilidad. Cualquier síntoma bien definido se clasifica en 2').
+respuesta13(2,'PÃ©rdida de energÃ­a y fatigabilidad. Cualquier sÃ­ntoma bien definido se clasifica en 2').
 
 respuesta14(0,'Ausente').
-respuesta14(1,'Débil').
+respuesta14(1,'DÃ©bil').
 respuesta14(2,'Grave').
 
 respuesta15(0,'Ausente').
@@ -100,13 +100,13 @@ respuesta15(1,'Preocupado de si mismo (corporalmente)').
 respuesta15(2,'Preocupado por su salud').
 respuesta15(3,'Se lamenta constantemente, solicita ayuda').
 
-respuesta16(0,'Pérdida de peso inferior a 500 gr. en una semana').
-respuesta16(1,'Pérdida de más de 500 gr. en una semana').
-respuesta16(2,'Pérdida de más de 1 Kg. en una semana').
+respuesta16(0,'PÃ©rdida de peso inferior a 500 gr. en una semana').
+respuesta16(1,'PÃ©rdida de mÃ¡s de 500 gr. en una semana').
+respuesta16(2,'PÃ©rdida de mÃ¡s de 1 Kg. en una semana').
 
 respuesta17(0,'Se da cuenta que esta deprimido y enfermo ').
-respuesta17(1,'Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentación, clima, exceso de trabajo, virus, necesidad de descanso, etc. ').
-respuesta17(2,'No se da cuenta que está enfermo ').
+respuesta17(1,'Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentaciÃ³n, clima, exceso de trabajo, virus, necesidad de descanso, etc. ').
+respuesta17(2,'No se da cuenta que estÃ¡ enfermo ').
 
 test:-pregunta1(P1),write('Pregunta 1: '),write(P1),nl,
 write('Ingrese opcion P1: '),read(N1), V1 is N1-1,
@@ -222,17 +222,17 @@ gravedad_depresion('Preocupate'):-depresion_severa,!.
 gravedad_depresion('Peligro'):-depresion_muy_severa,!.
 
 /*No deprimido: 0-7
-  Depresión ligera/menor: 8-13
-  Depresión moderada: 14-18
-  Depresión severa: 19-22   */
+  DepresiÃ³n ligera/menor: 8-13
+  DepresiÃ³n moderada: 14-18
+  DepresiÃ³n severa: 19-22   */
 /*depresion_ligera:- Suma>=8, Suma<=13,
-diagnostico('DEPRESIÓN LIGERA/MENOR ').
+diagnostico('DEPRESIÃ“N LIGERA/MENOR ').
 depresion_moderada:- Suma >= 14, Suma <= 18,
-diagnostico('DDEPRESIÓN MODERADA ').
+diagnostico('DDEPRESIÃ“N MODERADA ').
 depresion_severa:- Suma >= 19, Suma <= 22,
-diagnostico('DEPRESIÓN SEVERA ').
+diagnostico('DEPRESIÃ“N SEVERA ').
 depresion_muy_severa:- Suma >= 23, Suma <= 52,
-diagnostico('DEPRESIÓN MUY SEVERA ').
+diagnostico('DEPRESIÃ“N MUY SEVERA ').
 
 gravedad_depresion(X),write(X),
 diagnostico(Y),write(Y).    */
@@ -245,4 +245,5 @@ pos(X,[_|R],Pos):-pos(X,R,Pos1),Pos is Pos1+1.              */
 
 
 /* Kakaroto aliancista */
+/*Otro comentario*/
 
