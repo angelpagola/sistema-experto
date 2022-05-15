@@ -13,10 +13,10 @@ pregunta7('7. Trabajo y actividades').
 pregunta8('8. Inhibicion psicomotora a (lentitud de pensamiento y lenguaje, facultad de concentracion disminuida, disminucion de la actividad motora)').
 pregunta9('9. Agitacion psicomotora').
 pregunta10('10. Ansiedad psiquica').
-pregunta11('11. Ansiedad somatica (signos físicos de ansiedad, gastrointestinales: sequedad de boca, diarrea, eructos, indigestion, etc; cardiovasculares: palpitaciones, cefaleas; respiratorios: hiperventilacion, suspiros; frecuencia de micción incrementada; transpiracion)').
+pregunta11('11. Ansiedad somatica (signos fisicos de ansiedad, gastrointestinales: sequedad de boca, diarrea, eructos, indigestion, etc; cardiovasculares: palpitaciones, cefaleas; respiratorios: hiperventilacion, suspiros; frecuencia de miccion incrementada; transpiracion)').
 pregunta12('12. Sintomas somaticos gastrointestinales').
 pregunta13('13. Sintomas somaticos generales ').
-pregunta14('14. Sintomas genitales (tales como: disminución de la libido y trastornos menstruales)').
+pregunta14('14. Sintomas genitales (tales como: disminucion de la libido y trastornos menstruales)').
 pregunta15('15. Hipocondria').
 pregunta16('16. Perdida de peso').
 pregunta17('17. Introspecccion (insight)').
@@ -105,27 +105,27 @@ respuesta16(1,'Perdida de mas de 500 gr. en una semana').
 respuesta16(2,'Perdida de mas de 1 Kg. en una semana').
 
 respuesta17(0,'Se da cuenta que esta deprimido y enfermo').
-respuesta17(1,'Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentación, clima, exceso de trabajo, virus, necesidad de descanso, etc. ').
+respuesta17(1,'Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentacion, clima, exceso de trabajo, virus, necesidad de descanso, etc. ').
 respuesta17(2,'No se da cuenta que esta enfermo').
 
 
 respuestas(1, ['Ausente', 'Estas sensaciones las expresa solamente si le preguntan como se siente','Estas sensaciones las relata espontaneamente','Sensaciones no comunicadas verbalmente (expresion facial, postura, voz, tendencia al llanto)','Manifiesta estas sensaciones en su comunicacion verbal y no verbal en forma espontanea']).
 respuestas(2, ['Ausente','Se culpa a si mismo, cree haber decepcionado a la gente','Tiene ideas de culpabilidad o medita sobre errores pasados o malas acciones','Siente que la enfermedad actual es un castigo','Oye voces acusatorias o de denuncia y/o experimenta alucinaciones visuales de amenaza']).
-respuestas(3, ['Ausente','Le parece que la vida no vale la pena ser vivida','Desearía estar muerto o tiene pensamientos sobre la posibilidad de morirse','Ideas de suicidio o amenazas','Intentos de suicidio (cualquier intento serio)']).
-respuestas(4, ['No tiene dificultad','Dificultad ocasional para dormir, por ej. mas de media hora el conciliar el sueño','Dificultad para dormir cada noche']).
+respuestas(3, ['Ausente','Le parece que la vida no vale la pena ser vivida','Desearia estar muerto o tiene pensamientos sobre la posibilidad de morirse','Ideas de suicidio o amenazas','Intentos de suicidio (cualquier intento serio)']).
+respuestas(4, ['No tiene dificultad','Dificultad ocasional para dormir, por ej. mas de media hora el conciliar el sueno','Dificultad para dormir cada noche']).
 respuestas(5, ['No hay dificultad','Esta desvelado e inquieto o se despierta varias veces durante la noche','Esta despierto durante la noche, cualquier ocasion de levantarse de la cama se clasifica en 2 (excepto por motivos de evacuar)']).
 respuestas(6, ['No hay dificultad','Se despierta a primeras horas de la madrugada, pero se vuelve a dormir','No puede volver a dormirse si se levanta de la cama']).
-respuestas(7, ['No hay dificultad','Ideas y sentimientos de incapacidad, fatiga o debilidad (trabajos, pasatiempos)','Perdida de interes en su actividad (disminucion de la atencion, indecisión y vacilacion)','Disminucion del tiempo actual dedicado a actividades o disminución de la productividad','Dejó de trabajar por la presente enfermedad. Solo se compromete en las pequeñas tareas, o no puede realizar estas sin ayuda.']).
+respuestas(7, ['No hay dificultad','Ideas y sentimientos de incapacidad, fatiga o debilidad (trabajos, pasatiempos)','Perdida de interes en su actividad (disminucion de la atencion, indecision y vacilacion)','Disminucion del tiempo actual dedicado a actividades o disminucion de la productividad','Dejo de trabajar por la presente enfermedad. Solo se compromete en las pequenas tareas, o no puede realizar estas sin ayuda.']).
 respuestas(8, ['Palabra y pensamiento normales','Ligero retraso en el habla','Evidente retraso en el habla','Dificultad para expresarse','Incapacidad para expresarse']).
-respuestas(9, ['Ninguna','Juega con sus dedos','Juega con sus manos, cabello, etc.','No puede quedarse quieto ni permanecer sentado','Retuerce las manos, se muerde las uñas, se tira de los cabellos, se muerde los labios']).
-respuestas(10, ['No hay dificultad','Tension subjetiva e irritabilidad','Preocupacion por pequeñas cosas','Actitud aprensiva en la expresión o en el habla','Expresa sus temores sin que le pregunten']).
+respuestas(9, ['Ninguna','Juega con sus dedos','Juega con sus manos, cabello, etc.','No puede quedarse quieto ni permanecer sentado','Retuerce las manos, se muerde las unas, se tira de los cabellos, se muerde los labios']).
+respuestas(10, ['No hay dificultad','Tension subjetiva e irritabilidad','Preocupacion por pequenas cosas','Actitud aprensiva en la expresion o en el habla','Expresa sus temores sin que le pregunten']).
 respuestas(11, ['Ausente','Ligera','Moderada','Severa','Incapacitante']).
-respuestas(12, ['Ninguno','Pérdida del apetito pero come sin necesidad de que lo estimulen.','Sensacion de pesadez en el abdomen','Dificultad en comer si no se le insiste.','Solicita laxantes o medicación intestinal para sus síntomas gastrointestinales']).
-respuestas(13, ['Ninguno','Pesadez en las extremidades, espalda o cabeza. Dorsalgias. Cefaleas, algias musculares.','Perdida de energía y fatigabilidad. Cualquier sintoma bien definido se clasifica en 2']).
+respuestas(12, ['Ninguno','Perdida del apetito pero come sin necesidad de que lo estimulen.','Sensacion de pesadez en el abdomen','Dificultad en comer si no se le insiste.','Solicita laxantes o medicacion intestinal para sus sintomas gastrointestinales']).
+respuestas(13, ['Ninguno','Pesadez en las extremidades, espalda o cabeza. Dorsalgias. Cefaleas, algias musculares.','Perdida de energia y fatigabilidad. Cualquier sintoma bien definido se clasifica en 2']).
 respuestas(14, ['Ausente','Debil','Grave']).
 respuestas(15, ['Ausente','Preocupado de si mismo (corporalmente)','Preocupado por su salud','Se lamenta constantemente, solicita ayuda']).
-respuestas(16, ['Perdida de peso inferior a 500 gr. en una semana','Pérdida de mas de 500 gr. en una semana','Pérdida de más de 1 Kg. en una semana']).
-respuestas(17, ['Se da cuenta que esta deprimido y enfermo','Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentacion, clima, exceso de trabajo, virus, necesidad de descanso, etc. ','No se da cuenta que está enfermo']).
+respuestas(16, ['Perdida de peso inferior a 500 gr. en una semana','Perdida de mas de 500 gr. en una semana','Perdida de mas de 1 Kg. en una semana']).
+respuestas(17, ['Se da cuenta que esta deprimido y enfermo','Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentacion, clima, exceso de trabajo, virus, necesidad de descanso, etc. ','No se da cuenta que esta enfermo']).
 
 % -------------
 
