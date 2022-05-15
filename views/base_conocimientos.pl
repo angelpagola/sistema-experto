@@ -212,14 +212,29 @@ write('Respuesta 17: '),write(R17),nl,nl,
 
 write(Lista17),
 suma_lista(Lista17,Suma),
-write('La suma es: '),write(Suma).
+write('La suma es: '),write(Suma),
+validacion(Suma,Msj), write(Msj).
 
 /*DIAGNOSTICO*/
-gravedad_depresion('No hagas nada'):-sin_depresion,!.
-gravedad_depresion('Haz algo'):-depresion_ligera,!.
-gravedad_depresion('Relajate'):-depresion_moderada,!.
-gravedad_depresion('Preocupate'):-depresion_severa,!.
-gravedad_depresion('Peligro'):-depresion_muy_severa,!.
+niveles(0,'NO DEPRIMIDO').
+niveles(1,'DEPRESION LIGERA/MENOR').
+niveles(2,'DEPRESION MODERADA').
+niveles(3,'DEPRESION SEVERA').
+niveles(4,'DEPRESION MUY SEVERA').
+
+/*suma_n_num(N,1):- N=<1.
+suma_n_num(N,R):- N>1, N2 is N-1,suma_n_num(N2,R2),R is N+R2.*/
+
+validacion(Suma,Mensaje):- Suma>(-1),Suma<8,
+niveles(0,Mensaje).
+validacion(Suma,Mensaje):- Suma>7, Suma=<14,
+niveles(1,Mensaje).
+validacion(Suma,Mensaje):- Suma>13, Suma<19,
+niveles(2,Mensaje).
+validacion(Suma,Mensaje):- Suma>18, Suma<23,
+niveles(3,Mensaje).
+validacion(Suma,Mensaje):- Suma>22, Suma<53,
+niveles(4,Mensaje).
 
 /*No deprimido: 0-7
   Depresión ligera/menor: 8-13
@@ -232,10 +247,7 @@ diagnostico('DDEPRESIÓN MODERADA ').
 depresion_severa:- Suma >= 19, Suma <= 22,
 diagnostico('DEPRESIÓN SEVERA ').
 depresion_muy_severa:- Suma >= 23, Suma <= 52,
-diagnostico('DEPRESIÓN MUY SEVERA ').
-
-gravedad_depresion(X),write(X),
-diagnostico(Y),write(Y).    */
+diagnostico('DEPRESIÓN MUY SEVERA ').  */
 
 /*
 pos(X,[X|_],0).
