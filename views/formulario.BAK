@@ -1,6 +1,7 @@
-         :-use_module(library(pce)).
+:-use_module(library(pce)).
 :-use_module(library(pce_style_item)).
 :-consult('base_conocimientos.pl').
+:-encoding(utf8).
 :-pce_image_directory('../public/images/').
 
 
@@ -13,7 +14,7 @@ resource(logo6,image,image('escudo_unasam.jpg')).
 % --------------------------PARA EL MENU PRINCIPAL------------------------------------
 start:-
     new(Home, dialog),
-    new(W,  window('Diagnosticador de Depresión', size(900, 500))),
+    new(W,  window('Diagnosticador de Depresiï¿½n', size(900, 500))),
     new(Imagen,label(icon,resource(logo))),
 
     new(BtnIni,button('Usuario',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
@@ -32,9 +33,9 @@ start:-
 
 ventanaUsuario:-
     new(Cuestionario, dialog),
-    new(W,  picture('Sistema Experto | Modulo de usuario', size(800, 430))),
+    new(W,  picture('Cuestionario para el paciente', size(850, 500))),
 
-    % Creación de los labeles con los nombres de las preguntas
+    % Creaciï¿½n de los labeles con los nombres de las preguntas
     pregunta1(Pr1), new(P1,label(nombre, Pr1)),
     pregunta2(Pr2), new(P2,label(nombre, Pr2)),
     pregunta3(Pr3), new(P3,label(nombre, Pr3)),
@@ -47,8 +48,13 @@ ventanaUsuario:-
     pregunta10(Pr10), new(P10,label(nombre, Pr10)),
     pregunta11(Pr11), new(P11,label(nombre, Pr11)),
     pregunta12(Pr12), new(P12,label(nombre, Pr12)),
+    pregunta13(Pr13), new(P13,label(nombre, Pr13)),
+    pregunta14(Pr14), new(P14,label(nombre, Pr14)),
+    pregunta15(Pr15), new(P15,label(nombre, Pr15)),
+    pregunta16(Pr16), new(P16,label(nombre, Pr16)),
+    pregunta17(Pr17), new(P17,label(nombre, Pr17)),
 
-    % Creación de los combos con las alternativas de las preguntas
+    % Creaciï¿½n de los combos con las alternativas de las preguntas
     respuestas(1, Resp1), new(ComboPreg1,menu('Respuesta',cycle)), send_list(ComboPreg1,append, Resp1),
     respuestas(2, Resp2), new(ComboPreg2,menu('Respuesta',cycle)), send_list(ComboPreg2,append, Resp2),
     respuestas(3, Resp3), new(ComboPreg3,menu('Respuesta',cycle)), send_list(ComboPreg3,append, Resp3),
@@ -61,41 +67,48 @@ ventanaUsuario:-
     respuestas(10, Resp10), new(ComboPreg10,menu('Respuesta',cycle)), send_list(ComboPreg10,append, Resp10),
     respuestas(11, Resp11), new(ComboPreg11,menu('Respuesta',cycle)), send_list(ComboPreg11,append, Resp11),
     respuestas(12, Resp12), new(ComboPreg12,menu('Respuesta',cycle)), send_list(ComboPreg12,append, Resp12),
+    respuestas(13, Resp13), new(ComboPreg13,menu('Respuesta',cycle)), send_list(ComboPreg13,append, Resp13),
+    respuestas(14, Resp14), new(ComboPreg14,menu('Respuesta',cycle)), send_list(ComboPreg14,append, Resp14),
+    respuestas(15, Resp15), new(ComboPreg15,menu('Respuesta',cycle)), send_list(ComboPreg15,append, Resp15),
+    respuestas(16, Resp16), new(ComboPreg16,menu('Respuesta',cycle)), send_list(ComboPreg16,append, Resp16),
+    respuestas(17, Resp17), new(ComboPreg17,menu('Respuesta',cycle)), send_list(ComboPreg17,append, Resp17),
 
     send(Cuestionario, below, W),
 
     % Agregando los labeles y los combos al Dialog
-    send(W,display,P1,point(30,30)), send(W,display,ComboPreg1,point(50,50)),
-    send(W,display,P2,point(30,90)), send(W,display,ComboPreg2,point(50,110)),
-    send(W,display,P3,point(30,150)), send(W,display,ComboPreg3,point(50,170)),
-    send(W,display,P4,point(30,210)), send(W,display,ComboPreg4,point(50,230)),
-    send(W,display,P5,point(30,270)), send(W,display,ComboPreg5,point(50,290)),
-    send(W,display,P6,point(30,330)), send(W,display,ComboPreg6,point(50,350)),
-    send(W,display,P7,point(30,390)), send(W,display,ComboPreg7,point(50,410)),
-    send(W,display,P8,point(30,450)), send(W,display,ComboPreg8,point(50,470)),
-    send(W,display,P9,point(30,510)), send(W,display,ComboPreg9,point(50,530)),
-    send(W,display,P10,point(30,570)), send(W,display,ComboPreg10,point(50,590)),
-    send(W,display,P11,point(30,630)), send(W,display,ComboPreg11,point(50,650)),
-    send(W,display,P12,point(30,690)), send(W,display,ComboPreg12,point(50,710)),
+    send(W,display,P1,point(40,40)), send(W,display,ComboPreg1,point(55,60)),
+    send(W,display,P2,point(40,120)), send(W,display,ComboPreg2,point(55,140)),
+    send(W,display,P3,point(40,200)), send(W,display,ComboPreg3,point(55,220)),
+    send(W,display,P4,point(40,280)), send(W,display,ComboPreg4,point(55,300)),
+    send(W,display,P5,point(40,360)), send(W,display,ComboPreg5,point(55,380)),
+    send(W,display,P6,point(40,440)), send(W,display,ComboPreg6,point(55,460)),
+    send(W,display,P7,point(40,520)), send(W,display,ComboPreg7,point(55,540)),
+    send(W,display,P8,point(40,600)), send(W,display,ComboPreg8,point(55,620)),
+    send(W,display,P9,point(40,680)), send(W,display,ComboPreg9,point(55,700)),
+    send(W,display,P10,point(40,760)), send(W,display,ComboPreg10,point(55,780)),
+    send(W,display,P11,point(40,840)), send(W,display,ComboPreg11,point(55,860)),
+    send(W,display,P12,point(40,920)), send(W,display,ComboPreg12,point(55,940)),
+    send(W,display,P13,point(40,1000)), send(W,display,ComboPreg13,point(55,1020)),
+    send(W,display,P14,point(40,1080)), send(W,display,ComboPreg14,point(55,1100)),
+    send(W,display,P15,point(40,1160)), send(W,display,ComboPreg15,point(55,1180)),
+    send(W,display,P16,point(40,1240)), send(W,display,ComboPreg16,point(55,1260)),
+    send(W,display,P17,point(40,1320)), send(W,display,ComboPreg17,point(55,1340)),
+
+    %send(W,display,Imagen2,point(420,0)),
+
+    new(BtnAceptar,button('Obtener Diagnostico',and(message(@prolog,buscarResultado,ComboPreg1?selection,ComboPreg2?selection,ComboPreg3?selection,ComboPreg4?selection,ComboPreg5?selection,ComboPreg6?selection), message(W, destroy)))),
+    new(BtnRegresar,button('Cancelar test',and(message(@prolog, start),message(W, destroy)))),
+
+    send(Cuestionario,display,BtnRegresar,point(10,10)),
+    send(Cuestionario,display,BtnAceptar,point(280,10)),
+
+    send(Cuestionario, open_centered),
+    !.
 
 
+% -----------------------------BUSCAR SOLUCION A DEPRESION-----------------------------------------------
 
-      %send(W,display,Imagen2,point(420,0)),
-
-      new(BtnAceptar,button('Continuar',and(message(@prolog,buscarResultado,ComboPreg1?selection,ComboPreg2?selection,ComboPreg3?selection,ComboPreg4?selection,ComboPreg5?selection,ComboPreg6?selection), message(W, destroy)))),
-
-      new(BtnRegresar,button('Regresar',and(message(@prolog, start),message(W, destroy)))),
-
-      send(Cuestionario,display,BtnRegresar,point(10,10)),
-      send(Cuestionario,display,BtnAceptar,point(280,10)),
-
-      send(Cuestionario, open_centered),
-      !.
-
-
-% -----------------------------BUSCAR SOLUCION BIOMEDICA-----------------------------------------------
-
-buscarResultado(A,B,C,D,E,F):-
+buscarResultado(P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,P16,P17):-
 findall(Solucion, (necesidad(Solucion, A),
 etapa(Solucion, B),
 peso(Solucion, C),
