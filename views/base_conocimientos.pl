@@ -243,3 +243,6 @@ pos(_,[],_):-!,fail.
 pos(X,[_|R],Pos):-pos(X,R,Pos1),Pos is Pos1+1.              */
 /**Goku insecto**/
 
+
+/* Kakaroto aliancista */
+
