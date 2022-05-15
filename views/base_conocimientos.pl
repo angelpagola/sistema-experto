@@ -3,23 +3,23 @@ insertar(Elem,[X|Y],[X|Z]):-insertar(Elem,Y,Z).
 suma_lista([],0).
 suma_lista([H|Q],Sum):-suma_lista(Q,S1),Sum is H+S1.
 
-pregunta1('Humor depresivo (tristeza, desesperanza, desamparo, sentimiento de inutilidad)').
-pregunta2('Sentimientos de culpa').
-pregunta3('Suicidio').
-pregunta4('Insomnio precoz').
-pregunta5('Insomnio intermedio').
-pregunta6('Insomnio tardío ').
-pregunta7('Trabajo y actividades').
-pregunta8('Inhibición psicomotora a (lentitud de pensamiento y lenguaje, facultad de concentración disminuida, disminución de la actividad motora)').
-pregunta9('Agitación psicomotora').
-pregunta10('Ansiedad psíquica').
-pregunta11('Ansiedad somática (signos físicos de ansiedad, gastrointestinales: sequedad de boca, diarrea, eructos, indigestión, etc; cardiovasculares: palpitaciones, cefaleas; respiratorios: hiperventilación, suspiros; frecuencia de micción incrementada; transpiración)').
-pregunta12('Síntomas somáticos gastrointestinales').
-pregunta13('Síntomas somáticos generales ').
-pregunta14('Síntomas genitales (tales como: disminución de la libido y trastornos menstruales)').
-pregunta15('Hipocondría').
-pregunta16('Pérdida de peso').
-pregunta17('Introspeccción (insight)').
+pregunta1('1. Humor depresivo (tristeza, desesperanza, desamparo, sentimiento de inutilidad)').
+pregunta2('2. Sentimientos de culpa').
+pregunta3('3. Suicidio').
+pregunta4('4. Insomnio precoz').
+pregunta5('5. Insomnio intermedio').
+pregunta6('6. Insomnio tardío ').
+pregunta7('7. Trabajo y actividades').
+pregunta8('8. Inhibición psicomotora a (lentitud de pensamiento y lenguaje, facultad de concentración disminuida, disminución de la actividad motora)').
+pregunta9('9. Agitación psicomotora').
+pregunta10('10. Ansiedad psíquica').
+pregunta11('11. Ansiedad somática (signos físicos de ansiedad, gastrointestinales: sequedad de boca, diarrea, eructos, indigestión, etc; cardiovasculares: palpitaciones, cefaleas; respiratorios: hiperventilación, suspiros; frecuencia de micción incrementada; transpiración)').
+pregunta12('12. Síntomas somáticos gastrointestinales').
+pregunta13('13. Síntomas somáticos generales ').
+pregunta14('14. Síntomas genitales (tales como: disminución de la libido y trastornos menstruales)').
+pregunta15('15. Hipocondría').
+pregunta16('16. Pérdida de peso').
+pregunta17('17. Introspeccción (insight)').
 
 respuesta1(0,'Ausente').
 respuesta1(1,'Estas sensaciones las expresa solamente si le preguntan como se siente').
@@ -104,9 +104,31 @@ respuesta16(0,'Pérdida de peso inferior a 500 gr. en una semana').
 respuesta16(1,'Pérdida de más de 500 gr. en una semana').
 respuesta16(2,'Pérdida de más de 1 Kg. en una semana').
 
-respuesta17(0,'Se da cuenta que esta deprimido y enfermo ').
+respuesta17(0,'Se da cuenta que esta deprimido y enfermo').
 respuesta17(1,'Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentación, clima, exceso de trabajo, virus, necesidad de descanso, etc. ').
-respuesta17(2,'No se da cuenta que está enfermo ').
+respuesta17(2,'No se da cuenta que está enfermo').
+
+% ------------
+
+respuestas(1, ['Ausente', 'Estas sensaciones las expresa solamente si le preguntan como se siente','Estas sensaciones las relata espontáneamente','Sensaciones no comunicadas verbalmente (expresión facial, postura, voz, tendencia al llanto)','Manifiesta estas sensaciones en su comunicación verbal y no verbal en forma espontánea']).
+respuestas(2, ['Ausente','Se culpa a si mismo, cree haber decepcionado a la gente','Tiene ideas de culpabilidad o medita sobre errores pasados o malas acciones','Siente que la enfermedad actual es un castigo','Oye voces acusatorias o de denuncia y/o experimenta alucinaciones visuales de amenaza']).
+respuestas(3, ['Ausente','Le parece que la vida no vale la pena ser vivida','Desearía estar muerto o tiene pensamientos sobre la posibilidad de morirse','Ideas de suicidio o amenazas','Intentos de suicidio (cualquier intento serio)']).
+respuestas(4, ['No tiene dificultad','Dificultad ocasional para dormir, por ej. más de media hora el conciliar el sueño','Dificultad para dormir cada noche']).
+respuestas(5, ['No hay dificultad','Esta desvelado e inquieto o se despierta varias veces durante la noche','Esta despierto durante la noche, cualquier ocasión de levantarse de la cama se clasifica en 2 (excepto por motivos de evacuar)']).
+respuestas(6, ['No hay dificultad','Se despierta a primeras horas de la madrugada, pero se vuelve a dormir','No puede volver a dormirse si se levanta de la cama']).
+respuestas(7, ['No hay dificultad','Ideas y sentimientos de incapacidad, fatiga o debilidad (trabajos, pasatiempos)','Pérdida de interés en su actividad (disminución de la atención, indecisión y vacilación)','Disminución del tiempo actual dedicado a actividades o disminución de la productividad','Dejó de trabajar por la presente enfermedad. Solo se compromete en las pequeñas tareas, o no puede realizar estas sin ayuda.']).
+respuestas(8, ['Palabra y pensamiento normales','Ligero retraso en el habla','Evidente retraso en el habla','Dificultad para expresarse','Incapacidad para expresarse']).
+respuestas(9, ['Ninguna','Juega con sus dedos','Juega con sus manos, cabello, etc.','No puede quedarse quieto ni permanecer sentado','Retuerce las manos, se muerde las uñas, se tira de los cabellos, se muerde los labios']).
+respuestas(10, ['No hay dificultad','Tensión subjetiva e irritabilidad','Preocupación por pequeñas cosas','Actitud aprensiva en la expresión o en el habla','Expresa sus temores sin que le pregunten']).
+respuestas(11, ['Ausente','Ligera','Moderada','Severa','Incapacitante']).
+respuestas(12, ['Ninguno','Pérdida del apetito pero come sin necesidad de que lo estimulen.','Sensación de pesadez en el abdomen','Dificultad en comer si no se le insiste.','Solicita laxantes o medicación intestinal para sus síntomas gastrointestinales']).
+respuestas(13, ['Ninguno','Pesadez en las extremidades, espalda o cabeza. Dorsalgias. Cefaleas, algias musculares.','Pérdida de energía y fatigabilidad. Cualquier síntoma bien definido se clasifica en 2']).
+respuestas(14, ['Ausente','Débil','Grave']).
+respuestas(15, ['Ausente','Preocupado de si mismo (corporalmente)','Preocupado por su salud','Se lamenta constantemente, solicita ayuda']).
+respuestas(16, ['Pérdida de peso inferior a 500 gr. en una semana','Pérdida de más de 500 gr. en una semana','Pérdida de más de 1 Kg. en una semana']).
+respuestas(17, ['Se da cuenta que esta deprimido y enfermo','Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentación, clima, exceso de trabajo, virus, necesidad de descanso, etc. ','No se da cuenta que está enfermo']).
+
+% -------------
 
 test:-pregunta1(P1),write('Pregunta 1: '),write(P1),nl,
 write('Ingrese opcion P1: '),read(N1), V1 is N1-1,
