@@ -213,7 +213,18 @@ write('Respuesta 17: '),write(R17),nl,nl,
 write(Lista17),
 suma_lista(Lista17,Suma),
 write('La suma es: '),write(Suma),
-validacion(Suma,Msj), write(Msj).
+validacion(Suma,Msj), write(Msj),nl, /*validacion*/
+contarRep(0,Lista17,Veces0),
+contarRep(1,Lista17,Veces1),
+contarRep(2,Lista17,Veces1),
+contarRep(3,Lista17,Veces3),
+contarRep(4,Lista17,Veces4),
+/*conteo de respuestas con sus valores*/
+write('Numero de respuestas con valor 0 son: '),write(Veces0),
+write('Numero de respuestas con valor 1 son: '),write(Veces1),
+write('Numero de respuestas con valor 2 son: '),write(Veces2),
+write('Numero de respuestas con valor 3 son: '),write(Veces3),
+write('Numero de respuestas con valor 4 son: '),write(Veces4).
 
 /*DIAGNOSTICO*/
 niveles(0,'NO DEPRIMIDO').
