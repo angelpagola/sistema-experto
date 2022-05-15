@@ -23,9 +23,9 @@ pregunta17('17. IntrospeccciÛn (insight)').
 
 respuesta1(0,'Ausente').
 respuesta1(1,'Estas sensaciones las expresa solamente si le preguntan como se siente').
-respuesta1(2,'Estas sensaciones las relata espont·neamente').
-respuesta1(3,'Sensaciones no comunicadas verbalmente (expresiÛn facial, postura, voz, tendencia al llanto)').
-respuesta1(4,'Manifiesta estas sensaciones en su comunicaciÛn verbal y no verbal en forma espont·nea').
+respuesta1(2,'Estas sensaciones las relata espont√°neamente').
+respuesta1(3,'Sensaciones no comunicadas verbalmente (expresi√≥n facial, postura, voz, tendencia al llanto)').
+respuesta1(4,'Manifiesta estas sensaciones en su comunicaci√≥n verbal y no verbal en forma espont√°nea').
 
 respuesta2(0,'Ausente').
 respuesta2(1,'Se culpa a si mismo, cree haber decepcionado a la gente').
@@ -35,17 +35,17 @@ respuesta2(4,'Oye voces acusatorias o de denuncia y/o experimenta alucinaciones 
 
 respuesta3(0,'Ausente').
 respuesta3(1,'Le parece que la vida no vale la pena ser vivida').
-respuesta3(2,'DesearÌa estar muerto o tiene pensamientos sobre la posibilidad de morirse').
+respuesta3(2,'Desear√≠a estar muerto o tiene pensamientos sobre la posibilidad de morirse').
 respuesta3(3,'Ideas de suicidio o amenazas').
 respuesta3(4,'Intentos de suicidio (cualquier intento serio)').
 
 respuesta4(0,'No tiene dificultad').
-respuesta4(1,'Dificultad ocasional para dormir, por ej. m·s de media hora el conciliar el sueÒo').
+respuesta4(1,'Dificultad ocasional para dormir, por ej. m√°s de media hora el conciliar el sue√±o').
 respuesta4(2,'Dificultad para dormir cada noche').
 
 respuesta5(0,'No hay dificultad').
 respuesta5(1,'Esta desvelado e inquieto o se despierta varias veces durante la noche').
-respuesta5(2,'Esta despierto durante la noche, cualquier ocasiÛn de levantarse de la cama se clasifica en 2 (excepto por motivos de evacuar)').
+respuesta5(2,'Esta despierto durante la noche, cualquier ocasi√≥n de levantarse de la cama se clasifica en 2 (excepto por motivos de evacuar)').
 
 respuesta6(0,'No hay dificultad').
 respuesta6(1,'Se despierta a primeras horas de la madrugada, pero se vuelve a dormir').
@@ -53,9 +53,9 @@ respuesta6(2,'No puede volver a dormirse si se levanta de la cama').
 
 respuesta7(0,'No hay dificultad').
 respuesta7(1,'Ideas y sentimientos de incapacidad, fatiga o debilidad (trabajos, pasatiempos)').
-respuesta7(2,'PÈrdida de interÈs en su actividad (disminuciÛn de la atenciÛn, indecisiÛn y vacilaciÛn)').
-respuesta7(3,'DisminuciÛn del tiempo actual dedicado a actividades o disminuciÛn de la productividad').
-respuesta7(4,'DejÛ de trabajar por la presente enfermedad. Solo se compromete en las pequeÒas tareas, o no puede realizar estas sin ayuda.').
+respuesta7(2,'P√©rdida de inter√©s en su actividad (disminuci√≥n de la atenci√≥n, indecisi√≥n y vacilaci√≥n)').
+respuesta7(3,'Disminuci√≥n del tiempo actual dedicado a actividades o disminuci√≥n de la productividad').
+respuesta7(4,'Dej√≥ de trabajar por la presente enfermedad. Solo se compromete en las peque√±as tareas, o no puede realizar estas sin ayuda.').
 
 respuesta8(0,'Palabra y pensamiento normales').
 respuesta8(1,'Ligero retraso en el habla').
@@ -67,12 +67,12 @@ respuesta9(0,'Ninguna').
 respuesta9(1,'Juega con sus dedos').
 respuesta9(2,'Juega con sus manos, cabello, etc.').
 respuesta9(3,'No puede quedarse quieto ni permanecer sentado').
-respuesta9(4,'Retuerce las manos, se muerde las uÒas, se tira de los cabellos, se muerde los labios').
+respuesta9(4,'Retuerce las manos, se muerde las u√±as, se tira de los cabellos, se muerde los labios').
 
 respuesta10(0,'No hay dificultad').
-respuesta10(1,'TensiÛn subjetiva e irritabilidad').
-respuesta10(2,'PreocupaciÛn por pequeÒas cosas').
-respuesta10(3,'Actitud aprensiva en la expresiÛn o en el habla').
+respuesta10(1,'Tensi√≥n subjetiva e irritabilidad').
+respuesta10(2,'Preocupaci√≥n por peque√±as cosas').
+respuesta10(3,'Actitud aprensiva en la expresi√≥n o en el habla').
 respuesta10(4,'Expresa sus temores sin que le pregunten').
 
 respuesta11(0,'Ausente').
@@ -82,17 +82,17 @@ respuesta11(3,'Severa').
 respuesta11(4,'Incapacitante').
 
 respuesta12(0,'Ninguno').
-respuesta12(1,'PÈrdida del apetito pero come sin necesidad de que lo estimulen.').
-respuesta12(2,'SensaciÛn de pesadez en el abdomen').
+respuesta12(1,'P√©rdida del apetito pero come sin necesidad de que lo estimulen.').
+respuesta12(2,'Sensaci√≥n de pesadez en el abdomen').
 respuesta12(3,'Dificultad en comer si no se le insiste.').
-respuesta12(4,'Solicita laxantes o medicaciÛn intestinal para sus sÌntomas gastrointestinales').
+respuesta12(4,'Solicita laxantes o medicaci√≥n intestinal para sus s√≠ntomas gastrointestinales').
 
 respuesta13(0,'Ninguno').
 respuesta13(1,'Pesadez en las extremidades, espalda o cabeza. Dorsalgias. Cefaleas, algias musculares.').
-respuesta13(2,'PÈrdida de energÌa y fatigabilidad. Cualquier sÌntoma bien definido se clasifica en 2').
+respuesta13(2,'P√©rdida de energ√≠a y fatigabilidad. Cualquier s√≠ntoma bien definido se clasifica en 2').
 
 respuesta14(0,'Ausente').
-respuesta14(1,'DÈbil').
+respuesta14(1,'D√©bil').
 respuesta14(2,'Grave').
 
 respuesta15(0,'Ausente').
@@ -100,15 +100,14 @@ respuesta15(1,'Preocupado de si mismo (corporalmente)').
 respuesta15(2,'Preocupado por su salud').
 respuesta15(3,'Se lamenta constantemente, solicita ayuda').
 
-respuesta16(0,'PÈrdida de peso inferior a 500 gr. en una semana').
-respuesta16(1,'PÈrdida de m·s de 500 gr. en una semana').
-respuesta16(2,'PÈrdida de m·s de 1 Kg. en una semana').
+respuesta16(0,'P√©rdida de peso inferior a 500 gr. en una semana').
+respuesta16(1,'P√©rdida de m√°s de 500 gr. en una semana').
+respuesta16(2,'P√©rdida de m√°s de 1 Kg. en una semana').
 
 respuesta17(0,'Se da cuenta que esta deprimido y enfermo').
 respuesta17(1,'Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentaciÛn, clima, exceso de trabajo, virus, necesidad de descanso, etc. ').
 respuesta17(2,'No se da cuenta que est· enfermo').
 
-% ------------
 
 respuestas(1, ['Ausente', 'Estas sensaciones las expresa solamente si le preguntan como se siente','Estas sensaciones las relata espont·neamente','Sensaciones no comunicadas verbalmente (expresiÛn facial, postura, voz, tendencia al llanto)','Manifiesta estas sensaciones en su comunicaciÛn verbal y no verbal en forma espont·nea']).
 respuestas(2, ['Ausente','Se culpa a si mismo, cree haber decepcionado a la gente','Tiene ideas de culpabilidad o medita sobre errores pasados o malas acciones','Siente que la enfermedad actual es un castigo','Oye voces acusatorias o de denuncia y/o experimenta alucinaciones visuales de amenaza']).
@@ -234,30 +233,53 @@ write('Respuesta 17: '),write(R17),nl,nl,
 
 write(Lista17),
 suma_lista(Lista17,Suma),
-write('La suma es: '),write(Suma).
+write('La suma es: '),write(Suma),
+validacion(Suma,Msj), write(Msj),nl, /*validacion*/
+contarRep(0,Lista17,Veces0),
+contarRep(1,Lista17,Veces1),
+contarRep(2,Lista17,Veces1),
+contarRep(3,Lista17,Veces3),
+contarRep(4,Lista17,Veces4),
+/*conteo de respuestas con sus valores*/
+write('Numero de respuestas con valor 0 son: '),write(Veces0),
+write('Numero de respuestas con valor 1 son: '),write(Veces1),
+write('Numero de respuestas con valor 2 son: '),write(Veces2),
+write('Numero de respuestas con valor 3 son: '),write(Veces3),
+write('Numero de respuestas con valor 4 son: '),write(Veces4).
 
 /*DIAGNOSTICO*/
-gravedad_depresion('No hagas nada'):-sin_depresion,!.
-gravedad_depresion('Haz algo'):-depresion_ligera,!.
-gravedad_depresion('Relajate'):-depresion_moderada,!.
-gravedad_depresion('Preocupate'):-depresion_severa,!.
-gravedad_depresion('Peligro'):-depresion_muy_severa,!.
+niveles(0,'NO DEPRIMIDO').
+niveles(1,'DEPRESION LIGERA/MENOR').
+niveles(2,'DEPRESION MODERADA').
+niveles(3,'DEPRESION SEVERA').
+niveles(4,'DEPRESION MUY SEVERA').
+
+/*suma_n_num(N,1):- N=<1.
+suma_n_num(N,R):- N>1, N2 is N-1,suma_n_num(N2,R2),R is N+R2.*/
+
+validacion(Suma,Mensaje):- Suma>(-1),Suma<8,
+niveles(0,Mensaje).
+validacion(Suma,Mensaje):- Suma>7, Suma=<14,
+niveles(1,Mensaje).
+validacion(Suma,Mensaje):- Suma>13, Suma<19,
+niveles(2,Mensaje).
+validacion(Suma,Mensaje):- Suma>18, Suma<23,
+niveles(3,Mensaje).
+validacion(Suma,Mensaje):- Suma>22, Suma<53,
+niveles(4,Mensaje).
 
 /*No deprimido: 0-7
-  DepresiÛn ligera/menor: 8-13
-  DepresiÛn moderada: 14-18
-  DepresiÛn severa: 19-22   */
+  Depresi√≥n ligera/menor: 8-13
+  Depresi√≥n moderada: 14-18
+  Depresi√≥n severa: 19-22   */
 /*depresion_ligera:- Suma>=8, Suma<=13,
-diagnostico('DEPRESI”N LIGERA/MENOR ').
+diagnostico('DEPRESI√ìN LIGERA/MENOR ').
 depresion_moderada:- Suma >= 14, Suma <= 18,
-diagnostico('DDEPRESI”N MODERADA ').
+diagnostico('DDEPRESI√ìN MODERADA ').
 depresion_severa:- Suma >= 19, Suma <= 22,
-diagnostico('DEPRESI”N SEVERA ').
+diagnostico('DEPRESI√ìN SEVERA ').
 depresion_muy_severa:- Suma >= 23, Suma <= 52,
-diagnostico('DEPRESI”N MUY SEVERA ').
-
-gravedad_depresion(X),write(X),
-diagnostico(Y),write(Y).    */
+diagnostico('DEPRESI√ìN MUY SEVERA ').  */
 
 /*
 pos(X,[X|_],0).
@@ -267,4 +289,5 @@ pos(X,[_|R],Pos):-pos(X,R,Pos1),Pos is Pos1+1.              */
 
 
 /* Kakaroto aliancista */
+/*Otro comentario*/
 
