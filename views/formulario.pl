@@ -140,8 +140,9 @@ buscarResultado(P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,P16,P17):-
   suma_lista(Lista17,Suma),
   write(Lista),
   write(Suma),
-  validacion(Suma,Msj), write(Msj),
-  resp(Msj, Suma), !.
+  validacion(Suma,Msj,Recomendacion), write(Msj),
+  recom_criticos(Lista17,Recom_critico),
+  resp(Msj, Suma, Recomendacion, Recom_critico), !.
   
   /*findall(Solucion,
     (necesidad(Solucion, A),
@@ -159,7 +160,7 @@ buscarResultado(A, B, C, D, E, F) :-
 
 pasarResp([X|Rest]):-(resp(X), pasarResp(Rest));true.
 
-resp(Nivel, Suma):-
+resp(Nivel, Suma, Recomendacion, Recom_critico):-
   /*descripcion(Solucion, R),
   imagen(Solucion, I),
   explicacion(Solucion, E),
@@ -170,11 +171,14 @@ resp(Nivel, Suma):-
   new(Lb1,label(nombre, "Diagnostico:")),
   new(Lb2,label(nombre, Nivel)),
   new(Lb3,label(nombre, Suma)),
+  new(Lb4,label(nombre, Recomendacion)),
+  new(Lb5,label(nombre, Recom_critico)),
   send(Respuesta, below, Wd),
   send(Wd,display,Lb1,point(40,40)),
   send(Wd,display,Lb2,point(40,80)),
   send(Wd,display,Lb3,point(40,100)),
-
+  send(Wd,display,Lb4,point(40,140)),
+  send(Wd,display,Lb5,point(40,180)),
  /* mostrar(I, W, 10, 70),
     
   new(BtnExplica,button('Leer Explicacion',and(message(@prolog, explica, E)))),

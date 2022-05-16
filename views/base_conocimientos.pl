@@ -2,6 +2,11 @@ insertar(Elem,Lista,[Elem|Lista]).
 insertar(Elem,[X|Y],[X|Z]):-insertar(Elem,Y,Z).
 suma_lista([],0).
 suma_lista([H|Q],Sum):-suma_lista(Q,S1),Sum is H+S1.
+
+contarRep(_,Lista,Veces):-Lista=[], Veces=0.
+contarRep(Elem,Lista,Veces):-Lista=[Cab|Cola], Elem==Cab, contarRep(Elem,Cola,Vez),Veces is Vez+1.
+contarRep(Elem, Lista, Veces):-Lista=[Cab|Cola], Elem\==Cab, contarRep(Elem,Cola,Vez), Veces is Vez.
+
 /*Probando*/
 pregunta1('1. Humor depresivo (tristeza, desesperanza, desamparo, sentimiento de inutilidad)').
 pregunta2('2. Sentimientos de culpa').
@@ -234,57 +239,77 @@ write('Respuesta 17: '),write(R17),nl,nl,
 write(Lista17),
 suma_lista(Lista17,Suma),
 write('La suma es: '),write(Suma),
-validacion(Suma,Msj), write(Msj),nl, /*validacion*/
-contarRep(0,Lista17,Veces0),
+validacion(Suma,Msj,Recom), write(Msj),nl, /*validacion*/
+recom_criticos(Lista17,Recomendacion),
+/*contarRep(0,Lista17,Veces0),
 contarRep(1,Lista17,Veces1),
-contarRep(2,Lista17,Veces1),
+contarRep(2,Lista17,Veces2),
 contarRep(3,Lista17,Veces3),
 contarRep(4,Lista17,Veces4),
-/*conteo de respuestas con sus valores*/
+%onteo de respuestas con sus valores
 write('Numero de respuestas con valor 0 son: '),write(Veces0),
 write('Numero de respuestas con valor 1 son: '),write(Veces1),
 write('Numero de respuestas con valor 2 son: '),write(Veces2),
 write('Numero de respuestas con valor 3 son: '),write(Veces3),
-write('Numero de respuestas con valor 4 son: '),write(Veces4).
+write('Numero de respuestas con valor 4 son: '),write(Veces4),*/
+write(Recomendacion).
 
 /*DIAGNOSTICO*/
-niveles(0,'NO DEPRIMIDO').
-niveles(1,'DEPRESION LIGERA/MENOR').
-niveles(2,'DEPRESION MODERADA').
-niveles(3,'DEPRESION SEVERA').
-niveles(4,'DEPRESION MUY SEVERA').
+niveles(0,'NO DEPRIMIDO','Procure mantener la salud mental que tiene').
+niveles(1,'DEPRESION LIGERA/MENOR','Se le recomienda tratar de relajarse con actividades recreativas').
+niveles(2,'DEPRESION MODERADA','Se le recomienda estar en contacto frecuente con algun profesional de salud').
+niveles(3,'DEPRESION SEVERA','Visitar un profesional de salud con urgencia').
+niveles(4,'DEPRESION MUY SEVERA','Visitar un profesional de salud con urgencia y de ser necesario comunicarse al 043-2547').
 
-/*suma_n_num(N,1):- N=<1.
-suma_n_num(N,R):- N>1, N2 is N-1,suma_n_num(N2,R2),R is N+R2.*/
+%%Mensajes de alertaas criticos
+msg_recom(1,'Alerta... Presencia de un posible trastorno de ansiedad asista a un psicologo de la UNASAM porque tiene problemas criticos').
+msg_recom(2,'Alerta... Presenta algun sintoma de ansiedad o nerviosismo, acerquese a un psicologo de la UNASAM').
+msg_recom(3,'Alerta... Usted tiene algún síntoma de ansiedad o nerviosismo por precaucion acerquese a un psicologo de la UNASAM').
+msg_recom(4,'Precaucion... Acerquese a la Oficina de Salud y Unidad de Psicopedagogia de la UNASAM').
+msg_recom(5,'').
+%%%%%%Validacion de cantidad de  4's mayores a 1 por ejemplo una respuesta de intento de suicidio%%%%
+%captura lista resultados y muestra recomendacion extrA
+/*eJEMPLO: recom_criticos([1,2,1,2,1,3,1,4,1,2,3,3,3,2,3,2,0],Mensaje).*/
+recom_criticos(Resultados,Recom):-contarRep(4,Resultados,Vez),Vez>0,Vez<18,msg_recom(1,Recom).
+recom_criticos(Resultados,Recom):-contarRep(3,Resultados,Vez),Vez>9,Vez<18,msg_recom(1,Recom).
+recom_criticos(Resultados,Recom):-contarRep(3,Resultados,Vez),Vez>5,Vez<10,msg_recom(2,Recom).
+recom_criticos(Resultados,Recom):-contarRep(3,Resultados,Vez),Vez>3,Vez<6,msg_recom(3,Recom).
+recom_criticos(Resultados,Recom):-contarRep(3,Resultados,Vez),Vez>0,Vez<4,msg_recom(4,Recom).
+recom_criticos(Resultados,Recom):-contarRep(2,Resultados,Vez),Vez>0,Vez<18,msg_recom(5,Recom).
+recom_criticos(Resultados,Recom):-contarRep(1,Resultados,Vez),Vez>0,Vez<18,msg_recom(5,Recom).
+recom_criticos(Resultados,Recom):-contarRep(0,Resultados,Vez),Vez>0,Vez<18,msg_recom(5,Recom).
+%%%%%%Validacion de numeros 4 mayores a 1 por ejemplo una respuesta de intento de suicidio%%%%
 
-validacion(Suma,Mensaje):- Suma>(-1),Suma<8,
-niveles(0,Mensaje).
-validacion(Suma,Mensaje):- Suma>7, Suma=<14,
-niveles(1,Mensaje).
-validacion(Suma,Mensaje):- Suma>13, Suma<19,
-niveles(2,Mensaje).
-validacion(Suma,Mensaje):- Suma>18, Suma<23,
-niveles(3,Mensaje).
-validacion(Suma,Mensaje):- Suma>22, Suma<53,
-niveles(4,Mensaje).
+%%%validacion ingresa la suma de los pesos de test y muestra el nivel de depresion y la recomendaciion
+/*Ejemplo: validacion(30,Mensaje,Recomendacion).*/
+validacion(Suma,Mensaje,Recomendacion):- Suma>(-1),Suma<8,
+niveles(0,Mensaje,Recomendacion).
+validacion(Suma,Mensaje,Recomendacion):- Suma>7, Suma<14,
+niveles(1,Mensaje,Recomendacion).
+validacion(Suma,Mensaje,Recomendacion):- Suma>13, Suma<19,
+niveles(2,Mensaje,Recomendacion).
+validacion(Suma,Mensaje,Recomendacion):- Suma>18, Suma<23,
+niveles(3,Mensaje,Recomendacion).
+validacion(Suma,Mensaje,Recomendacion):- Suma>22, Suma<53,
+niveles(4,Mensaje,Recomendacion).
 
 /*No deprimido: 0-7
   DepresiÃ³n ligera/menor: 8-13
   DepresiÃ³n moderada: 14-18
   DepresiÃ³n severa: 19-22   */
 /*depresion_ligera:- Suma>=8, Suma<=13,
-diagnostico('DEPRESIÃN LIGERA/MENOR ').
+diagnostico('DEPRESION LIGERA/MENOR ').
 depresion_moderada:- Suma >= 14, Suma <= 18,
-diagnostico('DDEPRESIÃN MODERADA ').
+diagnostico('DDEPRESION MODERADA ').
 depresion_severa:- Suma >= 19, Suma <= 22,
-diagnostico('DEPRESIÃN SEVERA ').
+diagnostico('DEPRESION SEVERA ').
 depresion_muy_severa:- Suma >= 23, Suma <= 52,
-diagnostico('DEPRESIÃN MUY SEVERA ').  */
+diagnostico('DEPRESION MUY SEVERA ').  */
 
 /*
 pos(X,[X|_],0).
 pos(_,[],_):-!,fail.
-pos(X,[_|R],Pos):-pos(X,R,Pos1),Pos is Pos1+1.              */
+pos(X,[_|R],Pos):-pos(X,R,Pos1),Pos is Pos1+1. */
 /**Goku insecto**/
 
 
