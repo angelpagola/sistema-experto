@@ -96,7 +96,7 @@ ventanaUsuario:-
 
     %send(W,display,Imagen2,point(420,0)),
 
-    new(BtnAceptar,button('Obtener Diagnostico',and(message(@prolog,buscarResultado,ComboPreg1?selection,ComboPreg2?selection,ComboPreg3?selection,ComboPreg4?selection,ComboPreg5?selection,ComboPreg6?selection), message(W, destroy)))),
+    new(BtnAceptar,button('Obtener Diagnostico',and(message(@prolog,buscarResultado,ComboPreg1?selection,ComboPreg2?selection,ComboPreg3?selection,ComboPreg4?selection,ComboPreg5?selection,ComboPreg6?selection,ComboPreg7?selection,ComboPreg8?selection,ComboPreg9?selection,ComboPreg10?selection,ComboPreg11?selection,ComboPreg12?selection,ComboPreg13?selection,ComboPreg14?selection,ComboPreg15?selection,ComboPreg16?selection,ComboPreg17?selection), message(W, destroy)))),
     new(BtnRegresar,button('Cancelar test',and(message(@prolog, start),message(W, destroy)))),
 
     send(Cuestionario,display,BtnRegresar,point(10,10)),
@@ -109,45 +109,75 @@ ventanaUsuario:-
 % -----------------------------BUSCAR SOLUCION A DEPRESION-----------------------------------------------
 
 buscarResultado(P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,P16,P17):-
-findall(Solucion, (necesidad(Solucion, A),
-etapa(Solucion, B),
-peso(Solucion, C),
-extremidad(Solucion, D),
-anomalia(Solucion, E),
-actividad(Solucion, F)), Lista),
-pasarResp(Lista), !.
-
+  writeln("Seleccionados: "),
+  write(P1), respuesta1(R1, P1), write(' -> '), writeln(R1), insertar(R1, [], Lista1),
+  write(P2), respuesta2(R2, P2), write(' -> '), writeln(R2), insertar(R2, Lista1, Lista2),
+  write(P3), respuesta3(R3, P3), write(' -> '), writeln(R3), insertar(R3, Lista2, Lista3),
+  write(P4), respuesta4(R4, P4), write(' -> '), writeln(R4), insertar(R4, Lista3, Lista4),
+  write(P5), respuesta5(R5, P5), write(' -> '), writeln(R5), insertar(R5, Lista4, Lista5),
+  write(P6), respuesta6(R6, P6), write(' -> '), writeln(R6), insertar(R6, Lista5, Lista6),
+  write(P7), respuesta7(R7, P7), write(' -> '), writeln(R7), insertar(R7, Lista6, Lista7),
+  write(P8), respuesta8(R8, P8), write(' -> '), writeln(R8), insertar(R8, Lista7, Lista8),
+  write(P9), respuesta9(R9, P9), write(' -> '), writeln(R9), insertar(R9, Lista8, Lista9),
+  write(P10), respuesta10(R10, P10), write(' -> '), writeln(R10), insertar(R10, Lista9, Lista10),
+  write(P11), respuesta11(R11, P11), write(' -> '), writeln(R11), insertar(R11, Lista10, Lista11),
+  write(P12), respuesta12(R12, P12), write(' -> '), writeln(R12), insertar(R12, Lista11, Lista12),
+  write(P13), respuesta13(R13, P13), write(' -> '), writeln(R13), insertar(R13, Lista12, Lista13),
+  write(P14), respuesta14(R14, P14), write(' -> '), writeln(R14), insertar(R14, Lista13, Lista14),
+  write(P15), respuesta15(R15, P15), write(' -> '), writeln(R15), insertar(R15, Lista14, Lista15),
+  write(P16), respuesta16(R16, P16), write(' -> '), writeln(R16), insertar(R16, Lista15, Lista16),
+  write(P17), respuesta17(R17, P17), write(' -> '), writeln(R17), insertar(R17, Lista16, Lista17),
+  suma_lista(Lista17,Suma),
+  write(Lista),
+  write(Suma),
+  validacion(Suma,Msj,Recomendacion), write(Msj),
+  recom_criticos(Lista17,Recom_critico),
+  resp(Msj, Suma, Recomendacion, Recom_critico), !.
+  
+  /*findall(Solucion,
+    (necesidad(Solucion, A),
+    etapa(Solucion, B),
+    peso(Solucion, C),
+    extremidad(Solucion, D),
+    anomalia(Solucion, E),
+    actividad(Solucion, F)), Lista),
+  pasarResp(Lista), !.*/
+/*
 buscarResultado(A, B, C, D, E, F) :-
-writeln('No se encontro ningun resultado con los siguientes parametros:'),
-writeln(A), writeln(B), writeln(C), writeln(D), writeln(E), writeln(F),
-respNO(A,B,C,D,E,F).
+  writeln('No se encontro ningun resultado con los siguientes parametros:'),
+  writeln(A), writeln(B), writeln(C), writeln(D), writeln(E), writeln(F),
+  respNO(A,B,C,D,E,F).*/
 
-pasarResp([X|Rest]):-
-(resp(X), pasarResp(Rest));true.
+pasarResp([X|Rest]):-(resp(X), pasarResp(Rest));true.
 
-resp(Solucion):-
-descripcion(Solucion, R),
-imagen(Solucion, I),
-explicacion(Solucion, E),
-writeln(R), writeln(I),
-new(D, dialog),
-new(W,  window('Sistema Experto | Resultado', size(750, 500))),
-new(R0,label(nombre,'Usted necesita:')),
-new(R1,label(nombre,R)),
-send(W,display,R0,point(40,15)),
-send(W,display,R1,point(40,55)),
-mostrar(I, W, 10, 70), % medidas
-
-
-new(BtnExplica,button('Leer Explicacion',and(message(@prolog, explica, E)))),
-
-new(BtnInicio,button('Regresar',and(message(@prolog, start),message(W, destroy)))),
-
-send(D,display,BtnExplica,point(250,10)),
-send(D,display,BtnInicio,point(380,10)),
-
-send(D, below, W),
-send(D, open_centered).
+resp(Nivel, Suma, Recomendacion, Recom_critico):-
+  /*descripcion(Solucion, R),
+  imagen(Solucion, I),
+  explicacion(Solucion, E),
+  writeln(R),
+  writeln(I),*/
+  new(Respuesta, dialog),
+  new(Wd,  picture('Diagnostico del paciente', size(850, 500))),
+  new(Lb1,label(nombre, "Diagnostico:")),
+  new(Lb2,label(nombre, Nivel)),
+  new(Lb3,label(nombre, Suma)),
+  new(Lb4,label(nombre, Recomendacion)),
+  new(Lb5,label(nombre, Recom_critico)),
+  send(Respuesta, below, Wd),
+  send(Wd,display,Lb1,point(40,40)),
+  send(Wd,display,Lb2,point(40,80)),
+  send(Wd,display,Lb3,point(40,100)),
+  send(Wd,display,Lb4,point(40,140)),
+  send(Wd,display,Lb5,point(40,180)),
+ /* mostrar(I, W, 10, 70),
+    
+  new(BtnExplica,button('Leer Explicacion',and(message(@prolog, explica, E)))),
+  new(BtnInicio,button('Regresar',and(message(@prolog, start),message(W, destroy)))),
+  send(D,display,BtnExplica,point(250,10)),
+  send(D,display,BtnInicio,point(380,10)),
+  send(D, below, W),*/
+  send(Respuesta, open_centered),
+    !.
 
 
 mostrar(I, W, X, Y) :-

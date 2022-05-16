@@ -2,6 +2,11 @@ insertar(Elem,Lista,[Elem|Lista]).
 insertar(Elem,[X|Y],[X|Z]):-insertar(Elem,Y,Z).
 suma_lista([],0).
 suma_lista([H|Q],Sum):-suma_lista(Q,S1),Sum is H+S1.
+
+contarRep(_,Lista,Veces):-Lista=[], Veces=0.
+contarRep(Elem,Lista,Veces):-Lista=[Cab|Cola], Elem==Cab, contarRep(Elem,Cola,Vez),Veces is Vez+1.
+contarRep(Elem, Lista, Veces):-Lista=[Cab|Cola], Elem\==Cab, contarRep(Elem,Cola,Vez), Veces is Vez.
+
 /*Probando*/
 pregunta1('1. Humor depresivo (tristeza, desesperanza, desamparo, sentimiento de inutilidad)').
 pregunta2('2. Sentimientos de culpa').
@@ -13,10 +18,10 @@ pregunta7('7. Trabajo y actividades').
 pregunta8('8. Inhibicion psicomotora a (lentitud de pensamiento y lenguaje, facultad de concentracion disminuida, disminucion de la actividad motora)').
 pregunta9('9. Agitacion psicomotora').
 pregunta10('10. Ansiedad psiquica').
-pregunta11('11. Ansiedad somatica (signos físicos de ansiedad, gastrointestinales: sequedad de boca, diarrea, eructos, indigestion, etc; cardiovasculares: palpitaciones, cefaleas; respiratorios: hiperventilacion, suspiros; frecuencia de micción incrementada; transpiracion)').
+pregunta11('11. Ansiedad somatica (signos fisicos de ansiedad, gastrointestinales: sequedad de boca, diarrea, eructos, indigestion, etc; cardiovasculares: palpitaciones, cefaleas; respiratorios: hiperventilacion, suspiros; frecuencia de miccion incrementada; transpiracion)').
 pregunta12('12. Sintomas somaticos gastrointestinales').
 pregunta13('13. Sintomas somaticos generales ').
-pregunta14('14. Sintomas genitales (tales como: disminución de la libido y trastornos menstruales)').
+pregunta14('14. Sintomas genitales (tales como: disminucion de la libido y trastornos menstruales)').
 pregunta15('15. Hipocondria').
 pregunta16('16. Perdida de peso').
 pregunta17('17. Introspecccion (insight)').
@@ -105,27 +110,27 @@ respuesta16(1,'Perdida de mas de 500 gr. en una semana').
 respuesta16(2,'Perdida de mas de 1 Kg. en una semana').
 
 respuesta17(0,'Se da cuenta que esta deprimido y enfermo').
-respuesta17(1,'Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentación, clima, exceso de trabajo, virus, necesidad de descanso, etc. ').
+respuesta17(1,'Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentacion, clima, exceso de trabajo, virus, necesidad de descanso, etc. ').
 respuesta17(2,'No se da cuenta que esta enfermo').
 
 
 respuestas(1, ['Ausente', 'Estas sensaciones las expresa solamente si le preguntan como se siente','Estas sensaciones las relata espontaneamente','Sensaciones no comunicadas verbalmente (expresion facial, postura, voz, tendencia al llanto)','Manifiesta estas sensaciones en su comunicacion verbal y no verbal en forma espontanea']).
 respuestas(2, ['Ausente','Se culpa a si mismo, cree haber decepcionado a la gente','Tiene ideas de culpabilidad o medita sobre errores pasados o malas acciones','Siente que la enfermedad actual es un castigo','Oye voces acusatorias o de denuncia y/o experimenta alucinaciones visuales de amenaza']).
-respuestas(3, ['Ausente','Le parece que la vida no vale la pena ser vivida','Desearía estar muerto o tiene pensamientos sobre la posibilidad de morirse','Ideas de suicidio o amenazas','Intentos de suicidio (cualquier intento serio)']).
-respuestas(4, ['No tiene dificultad','Dificultad ocasional para dormir, por ej. mas de media hora el conciliar el sueño','Dificultad para dormir cada noche']).
+respuestas(3, ['Ausente','Le parece que la vida no vale la pena ser vivida','Desearia estar muerto o tiene pensamientos sobre la posibilidad de morirse','Ideas de suicidio o amenazas','Intentos de suicidio (cualquier intento serio)']).
+respuestas(4, ['No tiene dificultad','Dificultad ocasional para dormir, por ej. mas de media hora el conciliar el sueno','Dificultad para dormir cada noche']).
 respuestas(5, ['No hay dificultad','Esta desvelado e inquieto o se despierta varias veces durante la noche','Esta despierto durante la noche, cualquier ocasion de levantarse de la cama se clasifica en 2 (excepto por motivos de evacuar)']).
 respuestas(6, ['No hay dificultad','Se despierta a primeras horas de la madrugada, pero se vuelve a dormir','No puede volver a dormirse si se levanta de la cama']).
-respuestas(7, ['No hay dificultad','Ideas y sentimientos de incapacidad, fatiga o debilidad (trabajos, pasatiempos)','Perdida de interes en su actividad (disminucion de la atencion, indecisión y vacilacion)','Disminucion del tiempo actual dedicado a actividades o disminución de la productividad','Dejó de trabajar por la presente enfermedad. Solo se compromete en las pequeñas tareas, o no puede realizar estas sin ayuda.']).
+respuestas(7, ['No hay dificultad','Ideas y sentimientos de incapacidad, fatiga o debilidad (trabajos, pasatiempos)','Perdida de interes en su actividad (disminucion de la atencion, indecision y vacilacion)','Disminucion del tiempo actual dedicado a actividades o disminucion de la productividad','Dejo de trabajar por la presente enfermedad. Solo se compromete en las pequenas tareas, o no puede realizar estas sin ayuda.']).
 respuestas(8, ['Palabra y pensamiento normales','Ligero retraso en el habla','Evidente retraso en el habla','Dificultad para expresarse','Incapacidad para expresarse']).
-respuestas(9, ['Ninguna','Juega con sus dedos','Juega con sus manos, cabello, etc.','No puede quedarse quieto ni permanecer sentado','Retuerce las manos, se muerde las uñas, se tira de los cabellos, se muerde los labios']).
-respuestas(10, ['No hay dificultad','Tension subjetiva e irritabilidad','Preocupacion por pequeñas cosas','Actitud aprensiva en la expresión o en el habla','Expresa sus temores sin que le pregunten']).
+respuestas(9, ['Ninguna','Juega con sus dedos','Juega con sus manos, cabello, etc.','No puede quedarse quieto ni permanecer sentado','Retuerce las manos, se muerde las unas, se tira de los cabellos, se muerde los labios']).
+respuestas(10, ['No hay dificultad','Tension subjetiva e irritabilidad','Preocupacion por pequenas cosas','Actitud aprensiva en la expresion o en el habla','Expresa sus temores sin que le pregunten']).
 respuestas(11, ['Ausente','Ligera','Moderada','Severa','Incapacitante']).
-respuestas(12, ['Ninguno','Pérdida del apetito pero come sin necesidad de que lo estimulen.','Sensacion de pesadez en el abdomen','Dificultad en comer si no se le insiste.','Solicita laxantes o medicación intestinal para sus síntomas gastrointestinales']).
-respuestas(13, ['Ninguno','Pesadez en las extremidades, espalda o cabeza. Dorsalgias. Cefaleas, algias musculares.','Perdida de energía y fatigabilidad. Cualquier sintoma bien definido se clasifica en 2']).
+respuestas(12, ['Ninguno','Perdida del apetito pero come sin necesidad de que lo estimulen.','Sensacion de pesadez en el abdomen','Dificultad en comer si no se le insiste.','Solicita laxantes o medicacion intestinal para sus sintomas gastrointestinales']).
+respuestas(13, ['Ninguno','Pesadez en las extremidades, espalda o cabeza. Dorsalgias. Cefaleas, algias musculares.','Perdida de energia y fatigabilidad. Cualquier sintoma bien definido se clasifica en 2']).
 respuestas(14, ['Ausente','Debil','Grave']).
 respuestas(15, ['Ausente','Preocupado de si mismo (corporalmente)','Preocupado por su salud','Se lamenta constantemente, solicita ayuda']).
-respuestas(16, ['Perdida de peso inferior a 500 gr. en una semana','Pérdida de mas de 500 gr. en una semana','Pérdida de más de 1 Kg. en una semana']).
-respuestas(17, ['Se da cuenta que esta deprimido y enfermo','Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentacion, clima, exceso de trabajo, virus, necesidad de descanso, etc. ','No se da cuenta que está enfermo']).
+respuestas(16, ['Perdida de peso inferior a 500 gr. en una semana','Perdida de mas de 500 gr. en una semana','Perdida de mas de 1 Kg. en una semana']).
+respuestas(17, ['Se da cuenta que esta deprimido y enfermo','Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentacion, clima, exceso de trabajo, virus, necesidad de descanso, etc. ','No se da cuenta que esta enfermo']).
 
 % -------------
 
@@ -234,57 +239,77 @@ write('Respuesta 17: '),write(R17),nl,nl,
 write(Lista17),
 suma_lista(Lista17,Suma),
 write('La suma es: '),write(Suma),
-validacion(Suma,Msj), write(Msj),nl, /*validacion*/
-contarRep(0,Lista17,Veces0),
+validacion(Suma,Msj,Recom), write(Msj),nl, /*validacion*/
+recom_criticos(Lista17,Recomendacion),
+/*contarRep(0,Lista17,Veces0),
 contarRep(1,Lista17,Veces1),
-contarRep(2,Lista17,Veces1),
+contarRep(2,Lista17,Veces2),
 contarRep(3,Lista17,Veces3),
 contarRep(4,Lista17,Veces4),
-/*conteo de respuestas con sus valores*/
+%onteo de respuestas con sus valores
 write('Numero de respuestas con valor 0 son: '),write(Veces0),
 write('Numero de respuestas con valor 1 son: '),write(Veces1),
 write('Numero de respuestas con valor 2 son: '),write(Veces2),
 write('Numero de respuestas con valor 3 son: '),write(Veces3),
-write('Numero de respuestas con valor 4 son: '),write(Veces4).
+write('Numero de respuestas con valor 4 son: '),write(Veces4),*/
+write(Recomendacion).
 
 /*DIAGNOSTICO*/
-niveles(0,'NO DEPRIMIDO').
-niveles(1,'DEPRESION LIGERA/MENOR').
-niveles(2,'DEPRESION MODERADA').
-niveles(3,'DEPRESION SEVERA').
-niveles(4,'DEPRESION MUY SEVERA').
+niveles(0,'NO DEPRIMIDO','Procure mantener la salud mental que tiene').
+niveles(1,'DEPRESION LIGERA/MENOR','Se le recomienda tratar de relajarse con actividades recreativas').
+niveles(2,'DEPRESION MODERADA','Se le recomienda estar en contacto frecuente con algun profesional de salud').
+niveles(3,'DEPRESION SEVERA','Visitar un profesional de salud con urgencia').
+niveles(4,'DEPRESION MUY SEVERA','Visitar un profesional de salud con urgencia y de ser necesario comunicarse al 043-2547').
 
-/*suma_n_num(N,1):- N=<1.
-suma_n_num(N,R):- N>1, N2 is N-1,suma_n_num(N2,R2),R is N+R2.*/
+%%Mensajes de alertaas criticos
+msg_recom(1,'Alerta... Presencia de un posible trastorno de ansiedad asista a un psicologo de la UNASAM porque tiene problemas criticos').
+msg_recom(2,'Alerta... Presenta algun sintoma de ansiedad o nerviosismo, acerquese a un psicologo de la UNASAM').
+msg_recom(3,'Alerta... Usted tiene algún síntoma de ansiedad o nerviosismo por precaucion acerquese a un psicologo de la UNASAM').
+msg_recom(4,'Se le recomienda acercarse a un psicologo de la UNASAM').
+msg_recom(5,'').
+%%%%%%Validacion de cantidad de  4's mayores a 1 por ejemplo una respuesta de intento de suicidio%%%%
+%captura lista resultados y muestra recomendacion extrA
+/*eJEMPLO: recom_criticos([1,2,1,2,1,3,1,4,1,2,3,3,3,2,3,2,0],Mensaje).*/
+recom_criticos(Resultados,Recom):-contarRep(4,Resultados,Vez),Vez>0,Vez<18,msg_recom(1,Recom).
+recom_criticos(Resultados,Recom):-contarRep(3,Resultados,Vez),Vez>9,Vez<18,msg_recom(1,Recom).
+recom_criticos(Resultados,Recom):-contarRep(3,Resultados,Vez),Vez>5,Vez<10,msg_recom(2,Recom).
+recom_criticos(Resultados,Recom):-contarRep(3,Resultados,Vez),Vez>3,Vez<6,msg_recom(3,Recom).
+recom_criticos(Resultados,Recom):-contarRep(3,Resultados,Vez),Vez>0,Vez<4,msg_recom(4,Recom).
+recom_criticos(Resultados,Recom):-contarRep(2,Resultados,Vez),Vez>0,Vez<18,msg_recom(5,Recom).
+recom_criticos(Resultados,Recom):-contarRep(1,Resultados,Vez),Vez>0,Vez<18,msg_recom(5,Recom).
+recom_criticos(Resultados,Recom):-contarRep(0,Resultados,Vez),Vez>0,Vez<18,msg_recom(5,Recom).
+%%%%%%Validacion de numeros 4 mayores a 1 por ejemplo una respuesta de intento de suicidio%%%%
 
-validacion(Suma,Mensaje):- Suma>(-1),Suma<8,
-niveles(0,Mensaje).
-validacion(Suma,Mensaje):- Suma>7, Suma=<14,
-niveles(1,Mensaje).
-validacion(Suma,Mensaje):- Suma>13, Suma<19,
-niveles(2,Mensaje).
-validacion(Suma,Mensaje):- Suma>18, Suma<23,
-niveles(3,Mensaje).
-validacion(Suma,Mensaje):- Suma>22, Suma<53,
-niveles(4,Mensaje).
+%%%validacion ingresa la suma de los pesos de test y muestra el nivel de depresion y la recomendaciion
+/*Ejemplo: validacion(30,Mensaje,Recomendacion).*/
+validacion(Suma,Mensaje,Recomendacion):- Suma>(-1),Suma<8,
+niveles(0,Mensaje,Recomendacion).
+validacion(Suma,Mensaje,Recomendacion):- Suma>7, Suma<14,
+niveles(1,Mensaje,Recomendacion).
+validacion(Suma,Mensaje,Recomendacion):- Suma>13, Suma<19,
+niveles(2,Mensaje,Recomendacion).
+validacion(Suma,Mensaje,Recomendacion):- Suma>18, Suma<23,
+niveles(3,Mensaje,Recomendacion).
+validacion(Suma,Mensaje,Recomendacion):- Suma>22, Suma<53,
+niveles(4,Mensaje,Recomendacion).
 
 /*No deprimido: 0-7
   DepresiÃ³n ligera/menor: 8-13
   DepresiÃ³n moderada: 14-18
   DepresiÃ³n severa: 19-22   */
 /*depresion_ligera:- Suma>=8, Suma<=13,
-diagnostico('DEPRESIÃN LIGERA/MENOR ').
+diagnostico('DEPRESION LIGERA/MENOR ').
 depresion_moderada:- Suma >= 14, Suma <= 18,
-diagnostico('DDEPRESIÃN MODERADA ').
+diagnostico('DDEPRESION MODERADA ').
 depresion_severa:- Suma >= 19, Suma <= 22,
-diagnostico('DEPRESIÃN SEVERA ').
+diagnostico('DEPRESION SEVERA ').
 depresion_muy_severa:- Suma >= 23, Suma <= 52,
-diagnostico('DEPRESIÃN MUY SEVERA ').  */
+diagnostico('DEPRESION MUY SEVERA ').  */
 
 /*
 pos(X,[X|_],0).
 pos(_,[],_):-!,fail.
-pos(X,[_|R],Pos):-pos(X,R,Pos1),Pos is Pos1+1.              */
+pos(X,[_|R],Pos):-pos(X,R,Pos1),Pos is Pos1+1. */
 /**Goku insecto**/
 
 
