@@ -3,25 +3,35 @@
 :-consult('base_conocimientos.pl').
 :-encoding(utf8).
 :-pce_image_directory('../public/images/').
+:-pce_image_directory('../public/images/icons/').
 
 
 resource(logo,image,image('escudo_peru.jpg')).
 resource(logo2,image,image('escudo_unasam.jpg')).
 resource(logo3,image,image('escudo_unasam.jpg')).
 resource(logo6,image,image('escudo_unasam.jpg')).
+resource(unasam_licenciada,image,image('unasam_licenciada.jpg')).
+resource(image_home,image,image('image_home.jpg')).
+%----------------------------------ICONOS---------------------------------------
+resource(icon_enter,image,image('icon_enter.gif')).
 
 
 % --------------------------PARA EL MENU PRINCIPAL------------------------------------
 start:-
     new(Home, dialog),
-    new(W,  window('Diagnosticador de Depresi�n', size(900, 500))),
-    new(Imagen,label(icon,resource(logo))),
+    new(W,window('Diagnosticador de Depresión', size(1024, 550))),
+    new(ImageHome,label(icon,resource(image_home))),
+    new(ImageUnasamLicenciada,label(icon,resource(unasam_licenciada))),
 
-    new(BtnIni,button('Usuario',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
+    new(BtnIni,button('Usuario______',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
+    new(IconEnter,label(icon,resource(icon_enter))),
 
     send(Home, below, W),
-    send(W,display,Imagen,point(0,0)),
+    send(W,display,ImageHome,point(0,0)),
+    send(W,display,ImageUnasamLicenciada,point(450,40)),
     send(Home,display,BtnIni,point(200,10)),
+    send(Home,display,IconEnter,point(255,13)),
+    send(Home,background(white)),
     send(Home, open_centered),
     !.
 % ---------------------------------------------------------------------------------------
@@ -33,9 +43,9 @@ start:-
 
 ventanaUsuario:-
     new(Cuestionario, dialog),
-    new(W,  picture('Cuestionario para el paciente', size(850, 500))),
+    new(W,  picture('Cuestionario para el paciente', size(1024, 550))),
 
-    % Creaci�n de los labeles con los nombres de las preguntas
+    % Creación de los labeles con los nombres de las preguntas
     pregunta1(Pr1), new(P1,label(nombre, Pr1)),
     pregunta2(Pr2), new(P2,label(nombre, Pr2)),
     pregunta3(Pr3), new(P3,label(nombre, Pr3)),
@@ -54,7 +64,7 @@ ventanaUsuario:-
     pregunta16(Pr16), new(P16,label(nombre, Pr16)),
     pregunta17(Pr17), new(P17,label(nombre, Pr17)),
 
-    % Creaci�n de los combos con las alternativas de las preguntas
+    % Creación de los combos con las alternativas de las preguntas
     respuestas(1, Resp1), new(ComboPreg1,menu('Respuesta',cycle)), send_list(ComboPreg1,append, Resp1),
     respuestas(2, Resp2), new(ComboPreg2,menu('Respuesta',cycle)), send_list(ComboPreg2,append, Resp2),
     respuestas(3, Resp3), new(ComboPreg3,menu('Respuesta',cycle)), send_list(ComboPreg3,append, Resp3),

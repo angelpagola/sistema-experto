@@ -9,18 +9,19 @@ resource(logo,image,image('escudo_peru.jpg')).
 resource(logo2,image,image('escudo_unasam.jpg')).
 resource(logo3,image,image('escudo_unasam.jpg')).
 resource(logo6,image,image('escudo_unasam.jpg')).
+resource(image_home,image,image('home.jpg')).
 
 
 % --------------------------PARA EL MENU PRINCIPAL------------------------------------
 start:-
     new(Home, dialog),
-    new(W,  window('Diagnosticador de Depresi�n', size(900, 500))),
-    new(Imagen,label(icon,resource(logo))),
+    new(W,window('Diagnosticador de Depresión', size(900, 500))),
+    new(ImageHome,label(icon,resource(image_home))),
 
     new(BtnIni,button('Usuario',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
 
     send(Home, below, W),
-    send(W,display,Imagen,point(0,0)),
+    send(W,display,ImageHome,point(0,0)),
     send(Home,display,BtnIni,point(200,10)),
     send(Home, open_centered),
     !.
@@ -130,6 +131,7 @@ buscarResultado(P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,P16,P17):-
   suma_lista(Lista17,Suma),
   write(Lista),
   write(Suma),
+
   validacion(Suma,Msj,Recomendacion), write(Msj),
   recom_criticos(Lista17,Recom_critico),
   resp(Msj, Suma, Recomendacion, Recom_critico), !.
@@ -151,6 +153,7 @@ buscarResultado(A, B, C, D, E, F) :-
 pasarResp([X|Rest]):-(resp(X), pasarResp(Rest));true.
 
 resp(Nivel, Suma, Recomendacion, Recom_critico):-
+
   /*descripcion(Solucion, R),
   imagen(Solucion, I),
   explicacion(Solucion, E),
@@ -161,14 +164,18 @@ resp(Nivel, Suma, Recomendacion, Recom_critico):-
   new(Lb1,label(nombre, "Diagnostico:")),
   new(Lb2,label(nombre, Nivel)),
   new(Lb3,label(nombre, Suma)),
+
   new(Lb4,label(nombre, Recomendacion)),
   new(Lb5,label(nombre, Recom_critico)),
+
   send(Respuesta, below, Wd),
   send(Wd,display,Lb1,point(40,40)),
   send(Wd,display,Lb2,point(40,80)),
   send(Wd,display,Lb3,point(40,100)),
+
   send(Wd,display,Lb4,point(40,140)),
   send(Wd,display,Lb5,point(40,180)),
+
  /* mostrar(I, W, 10, 70),
     
   new(BtnExplica,button('Leer Explicacion',and(message(@prolog, explica, E)))),
