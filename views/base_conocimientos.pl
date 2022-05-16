@@ -8,15 +8,15 @@ contarRep(Elem,Lista,Veces):-Lista=[Cab|Cola], Elem==Cab, contarRep(Elem,Cola,Ve
 contarRep(Elem, Lista, Veces):-Lista=[Cab|Cola], Elem\==Cab, contarRep(Elem,Cola,Vez), Veces is Vez.
 
 /*Probando*/
-pregunta1('1. Humor depresivo (tristeza, desesperanza, desamparo, sentimiento de inutilidad)').
-pregunta2('2. Sentimientos de culpa').
-pregunta3('3. Suicidio').
-pregunta4('4. Insomnio precoz').
-pregunta5('5. Insomnio intermedio').
-pregunta6('6. Insomnio tardio ').
-pregunta7('7. Trabajo y actividades').
-pregunta8('8. Inhibicion psicomotora a (lentitud de pensamiento y lenguaje, facultad de concentracion disminuida, disminucion de la actividad motora)').
-pregunta9('9. Agitacion psicomotora').
+pregunta1('01. Humor depresivo (tristeza, desesperanza, desamparo, sentimiento de inutilidad)').
+pregunta2('02. Sentimientos de culpa').
+pregunta3('03. Suicidio').
+pregunta4('04. Insomnio precoz').
+pregunta5('05. Insomnio intermedio').
+pregunta6('06. Insomnio tardio ').
+pregunta7('07. Trabajo y actividades').
+pregunta8('08. Inhibicion psicomotora a (lentitud de pensamiento y lenguaje, facultad de concentracion disminuida, disminucion de la actividad motora)').
+pregunta9('09. Agitacion psicomotora').
 pregunta10('10. Ansiedad psiquica').
 pregunta11('11. Ansiedad somatica (signos fisicos de ansiedad, gastrointestinales: sequedad de boca, diarrea, eructos, indigestion, etc; cardiovasculares: palpitaciones, cefaleas; respiratorios: hiperventilacion, suspiros; frecuencia de miccion incrementada; transpiracion)').
 pregunta12('12. Sintomas somaticos gastrointestinales').
