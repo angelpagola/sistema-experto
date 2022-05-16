@@ -265,7 +265,7 @@ niveles(4,'DEPRESION MUY SEVERA','Visitar un profesional de salud con urgencia y
 msg_recom(1,'Alerta... Presencia de un posible trastorno de ansiedad asista a un psicologo de la UNASAM porque tiene problemas criticos').
 msg_recom(2,'Alerta... Presenta algun sintoma de ansiedad o nerviosismo, acerquese a un psicologo de la UNASAM').
 msg_recom(3,'Alerta... Usted tiene algún síntoma de ansiedad o nerviosismo por precaucion acerquese a un psicologo de la UNASAM').
-msg_recom(4,'Se le recomienda acercarse a un psicologo de la UNASAM').
+msg_recom(4,'Precaucion... Acerquese a la Oficina de Salud y Unidad de Psicopedagogia de la UNASAM').
 msg_recom(5,'').
 %%%%%%Validacion de cantidad de  4's mayores a 1 por ejemplo una respuesta de intento de suicidio%%%%
 %captura lista resultados y muestra recomendacion extrA
