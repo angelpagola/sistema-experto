@@ -1,11 +1,15 @@
-:- dynamic estudiante/5.
+:- dynamic estudiante/6.
 
-estudiante('Nobita', '231.21', dvdv, 4, 'NO DEPRIMIDO').
-estudiante(fbfb, '261vf', vffffff, 18, 'DEPRESION MODERADA').
-estudiante('Pepe', '784jj', sdvdv, 3, 'NO DEPRIMIDO').
-estudiante(fbfbg, fvfv, fvfv, 0, 'NO DEPRIMIDO').
-estudiante('Jefer', '171354', turismo, 6, 'NO DEPRIMIDO').
-estudiante('Kakaroto', '171354', turismo, 6, 'NO DEPRIMIDO').
-estudiante('Frank', '17asdf', sistemas, 6, 'NO DEPRIMIDO').
-estudiante('Estudiante de prueba', '171.2503.000', 'Sistemas', 20, 'DEPRESION MODERADA').
+estudiante(7, 'Ronnie Van Zant', '159.3578.451', 'Arquitectura', 33, 'DEPRESION MUY SEVERA').
+estudiante(6, 'Pedro Castillo', '5451231', 'Educacion', 10, 'DEPRESION LIGERA/MENOR').
+estudiante(5, 'Martin Vizcarra', '231.21', 'Ing Civil', 4, 'NO DEPRIMIDO').
+estudiante(4, 'Pepe Flores', '784.4568', 'Ing Minas', 3, 'NO DEPRIMIDO').
+estudiante(3, 'Frank Colonia', '963.8520.741', 'Ing de Sistemas', 0, 'NO DEPRIMIDO').
+estudiante(2, 'Jefer Silvestre', '171354', turismo, 6, 'NO DEPRIMIDO').
+estudiante(1, 'Kakar Otto', '456.5171.354', 'Turismo', 6, 'NO DEPRIMIDO').
+
+:- dynamic indice/1.
+
+indice(8).
+indice(7).
 

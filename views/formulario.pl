@@ -25,12 +25,14 @@ start:-
     new(ImageUnasamLicenciada,label(icon,resource(unasam_licenciada))),
 
     new(BtnIni,button('Usuario______',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
+    new(BtnResu,button('Ver resultados',and(message(@prolog,ventanaResultado),message(W, destroy)))),
     new(IconEnter,label(icon,resource(icon_enter))),
 
     send(Home, below, W),
     send(W,display,ImageHome,point(0,0)),
     send(W,display,ImageUnasamLicenciada,point(450,40)),
     send(Home,display,BtnIni,point(200,10)),
+    send(Home,display,BtnResu,point(500,10)),
     send(Home,display,IconEnter,point(255,13)),
     send(Home,background(white)),
     send(Home, open_centered),
@@ -121,6 +123,112 @@ ventanaUsuario:-
     send(Cuestionario,display,BtnAceptar,point(280,10)),
 
     send(Cuestionario, open_centered),
+    !.
+    
+% ------------------- VENTANA PARA VER RESULTADOS ------------------
+ventanaResultado:-new(Resultado, dialog),
+    new(Wres,  picture('Resultados', size(800, 450))),
+    
+    new(Tit,label(nombre, 'Resultados almacenados', font('arial',bold,16))),
+    
+    send(Resultado, below, Wres),
+    send(Wres,display,Tit,point(50,50)),
+
+    (estudiante(1,N1,C1,E1,S1,D1)
+    -> string_concat(S1,' de 52',Resp1),
+    new(Id1,label(nombre,1)),  new(Nom1,label(nombre,N1)), new(Cod1,label(nombre,C1)), new(Esc1,label(nombre,E1)), new(Sum1,label(nombre,Resp1)), new(Dig1,label(nombre, D1)),
+    send(Wres,display,Id1,point(50,90)), send(Wres,display,Nom1,point(100,90)), send(Wres,display,Cod1,point(275,90)), send(Wres,display,Esc1,point(380,90)), send(Wres,display,Sum1,point(500,90)), send(Wres,display,Dig1,point(575,90))
+    ; write('no existe')),
+
+    (estudiante(2,N2,C2,E2,S2,D2)
+    -> string_concat(S2,' de 52',Resp2),
+    new(Id2,label(nombre,2)), new(Nom2,label(nombre,N2)), new(Cod2,label(nombre,C2)), new(Esc2,label(nombre,E2)), new(Sum2,label(nombre,Resp2)), new(Dig2,label(nombre, D2)),
+    send(Wres,display,Id2,point(50,120)), send(Wres,display,Nom2,point(100,120)), send(Wres,display,Cod2,point(275,120)), send(Wres,display,Esc2,point(380,120)), send(Wres,display,Sum2,point(500,120)), send(Wres,display,Dig2,point(575,120))
+    ; write('no existe')),
+
+    (estudiante(3,N3,C3,E3,S3,D3)
+    -> string_concat(S3,' de 52',Resp3),
+    new(Id3,label(nombre,3)),  new(Nom3,label(nombre,N3)), new(Cod3,label(nombre,C3)), new(Esc3,label(nombre,E3)), new(Sum3,label(nombre,Resp3)), new(Dig3,label(nombre, D3)),
+    send(Wres,display,Id3,point(50,150)), send(Wres,display,Nom3,point(100,150)), send(Wres,display,Cod3,point(275,150)), send(Wres,display,Esc3,point(380,150)), send(Wres,display,Sum3,point(500,150)), send(Wres,display,Dig3,point(575,150))
+    ; write('no existe')),
+    
+    (estudiante(4,N4,C4,E4,S4,D4)
+    -> string_concat(S4,' de 52',Resp4),
+    new(Id4,label(nombre,4)), new(Nom4,label(nombre,N4)), new(Cod4,label(nombre,C4)), new(Esc4,label(nombre,E4)), new(Sum4,label(nombre,Resp4)), new(Dig4,label(nombre, D4)),
+    send(Wres,display,Id4,point(50,180)), send(Wres,display,Nom4,point(100,180)), send(Wres,display,Cod4,point(275,180)), send(Wres,display,Esc4,point(380,180)), send(Wres,display,Sum4,point(500,180)), send(Wres,display,Dig4,point(575,180))
+    ; write('no existe')),
+    
+    (estudiante(5,N5,C5,E5,S5,D5)
+    -> string_concat(S5,' de 52',Resp5),
+    new(Id5,label(nombre,5)), new(Nom5,label(nombre,N5)), new(Cod5,label(nombre,C5)), new(Esc5,label(nombre,E5)), new(Sum5,label(nombre,Resp5)), new(Dig5,label(nombre, D5)),
+    send(Wres,display,Id5,point(50,210)), send(Wres,display,Nom5,point(100,210)), send(Wres,display,Cod5,point(275,210)), send(Wres,display,Esc5,point(380,210)), send(Wres,display,Sum5,point(500,210)), send(Wres,display,Dig5,point(575,210))
+    ; write('no existe')),
+    
+    (estudiante(6,N6,C6,E6,S6,D6)
+    -> string_concat(S6,' de 52',Resp6),
+    new(Id6,label(nombre,6)), new(Nom6,label(nombre,N6)), new(Cod6,label(nombre,C6)), new(Esc6,label(nombre,E6)), new(Sum6,label(nombre,Resp6)), new(Dig6,label(nombre, D6)),
+    send(Wres,display,Id6,point(50,240)), send(Wres,display,Nom6,point(100,240)), send(Wres,display,Cod6,point(275,240)), send(Wres,display,Esc6,point(380,240)), send(Wres,display,Sum6,point(500,240)), send(Wres,display,Dig6,point(575,240))
+    ; write('no existe')),
+    
+    (estudiante(7,N7,C7,E7,S7,D7)
+    -> string_concat(S7,' de 52',Resp7),
+    new(Id7,label(nombre,7)), new(Nom7,label(nombre,N7)), new(Cod7,label(nombre,C7)), new(Esc7,label(nombre,E7)), new(Sum7,label(nombre,Resp7)), new(Dig7,label(nombre, D7)),
+    send(Wres,display,Id7,point(50,270)), send(Wres,display,Nom7,point(100,270)), send(Wres,display,Cod7,point(275,270)), send(Wres,display,Esc7,point(380,270)), send(Wres,display,Sum7,point(500,270)), send(Wres,display,Dig7,point(575,270))
+    ; write('no existe')),
+    
+    (estudiante(8,N8,C8,E8,S8,D8)
+    -> string_concat(S8,' de 52',Resp8),
+    new(Id8,label(nombre,8)), new(Nom8,label(nombre,N8)), new(Cod8,label(nombre,C8)), new(Esc8,label(nombre,E8)), new(Sum8,label(nombre,Resp8)), new(Dig8,label(nombre, D8)),
+    send(Wres,display,Id8,point(50,300)), send(Wres,display,Nom8,point(100,300)), send(Wres,display,Cod8,point(275,300)), send(Wres,display,Esc8,point(380,300)), send(Wres,display,Sum8,point(500,300)), send(Wres,display,Dig8,point(575,300))
+    ; write('no existe')),
+    
+    (estudiante(9,N9,C9,E9,S9,D9)
+    -> string_concat(S9,' de 52',Resp9),
+    new(Id9,label(nombre,9)), new(Nom9,label(nombre,N9)), new(Cod9,label(nombre,C9)), new(Esc9,label(nombre,E9)), new(Sum9,label(nombre,Resp9)), new(Dig9,label(nombre, D9)),
+    send(Wres,display,Id9,point(50,330)), send(Wres,display,Nom9,point(100,330)), send(Wres,display,Cod9,point(275,330)), send(Wres,display,Esc9,point(380,330)), send(Wres,display,Sum9,point(500,330)), send(Wres,display,Dig9,point(575,330))
+    ; write('no existe')),
+    
+    (estudiante(10,N10,C10,E10,S10,D10)
+    -> string_concat(S10,' de 52',Resp10),
+    new(Id10,label(nombre,10)), new(Nom10,label(nombre,N10)), new(Cod10,label(nombre,C10)), new(Esc10,label(nombre,E10)), new(Sum10,label(nombre,Resp10)), new(Dig10,label(nombre, D10)),
+    send(Wres,display,Id10,point(50,360)), send(Wres,display,Nom10,point(100,360)), send(Wres,display,Cod10,point(275,360)), send(Wres,display,Esc10,point(380,360)), send(Wres,display,Sum10,point(500,360)), send(Wres,display,Dig10,point(575,360))
+    ; write('no existe')),
+    
+    (estudiante(11,N11,C11,E11,S11,D11)
+    -> string_concat(S11,' de 52',Resp11),
+    new(Id11,label(nombre,11)), new(Nom11,label(nombre,N11)), new(Cod11,label(nombre,C11)), new(Esc11,label(nombre,E11)), new(Sum11,label(nombre,Resp11)), new(Dig11,label(nombre, D11)),
+    send(Wres,display,Id11,point(50,390)), send(Wres,display,Nom11,point(100,390)), send(Wres,display,Cod11,point(275,390)), send(Wres,display,Esc11,point(380,390)), send(Wres,display,Sum11,point(500,390)), send(Wres,display,Dig11,point(575,390))
+    ; write('no existe')),
+    
+    (estudiante(12,N12,C12,E12,S12,D12)
+    -> string_concat(S12,' de 52',Resp12),
+    new(Id12,label(nombre,12)), new(Nom12,label(nombre,N12)), new(Cod12,label(nombre,C12)), new(Esc12,label(nombre,E12)), new(Sum12,label(nombre,Resp12)), new(Dig12,label(nombre, D12)),
+    send(Wres,display,Id12,point(50,420)), send(Wres,display,Nom12,point(100,420)), send(Wres,display,Cod12,point(275,420)), send(Wres,display,Esc12,point(380,420)), send(Wres,display,Sum12,point(500,420)), send(Wres,display,Dig12,point(575,420))
+    ; write('no existe')),
+    
+    (estudiante(13,N13,C13,E13,S13,D13)
+    -> string_concat(S13,' de 52',Resp13),
+    new(Id13,label(nombre,13)), new(Nom13,label(nombre,N13)), new(Cod13,label(nombre,C13)), new(Esc13,label(nombre,E13)), new(Sum13,label(nombre,Resp13)), new(Dig13,label(nombre, D13)),
+    send(Wres,display,Id13,point(50,450)), send(Wres,display,Nom13,point(100,450)), send(Wres,display,Cod13,point(275,450)), send(Wres,display,Esc13,point(380,450)), send(Wres,display,Sum13,point(500,450)), send(Wres,display,Dig13,point(575,450))
+    ; write('no existe')),
+    
+    (estudiante(14,N14,C14,E14,S14,D14)
+    -> string_concat(S14,' de 52',Resp14),
+    new(Id14,label(nombre,14)), new(Nom14,label(nombre,N14)), new(Cod14,label(nombre,C14)), new(Esc14,label(nombre,E14)), new(Sum14,label(nombre,Resp14)), new(Dig14,label(nombre, D14)),
+    send(Wres,display,Id14,point(50,480)), send(Wres,display,Nom14,point(100,480)), send(Wres,display,Cod14,point(275,480)), send(Wres,display,Esc14,point(380,480)), send(Wres,display,Sum14,point(500,480)), send(Wres,display,Dig14,point(575,480))
+    ; write('no existe')),
+    
+    (estudiante(15,N15,C15,E15,S15,D15)
+    -> string_concat(S15,' de 52',Resp15),
+    new(Id15,label(nombre,15)), new(Nom15,label(nombre,N15)), new(Cod15,label(nombre,C15)), new(Esc15,label(nombre,E15)), new(Sum15,label(nombre,Resp15)), new(Dig15,label(nombre, D15)),
+    send(Wres,display,Id15,point(50,510)), send(Wres,display,Nom15,point(100,510)), send(Wres,display,Cod15,point(275,510)), send(Wres,display,Esc15,point(380,510)), send(Wres,display,Sum15,point(500,510)), send(Wres,display,Dig15,point(575,510))
+    ; write('no existe')),
+
+    new(BtnRegresar,button('Volver al Inicio',and(message(@prolog, start),message(Wres, destroy)))),
+
+    send(Resultado,display,BtnRegresar,point(50,10)),
+            
+    send(Resultado, open_centered),
     !.
 
 
@@ -265,11 +373,17 @@ send(X, open_centered).
 %------------------------GUARDAR DIAGNOSTICO DEL ESTUDIANTE--------------------------
 
 generarNuevoConocimiento(Nombre,Codigo,Escuela,Suma,Diagn) :-
-  asserta(estudiante(Nombre,Codigo,Escuela,Suma,Diagn)),
+  indice(Id),
+  write('Indice: '), writeln(Id),
+  asserta(estudiante(Id, Nombre,Codigo,Escuela,Suma,Diagn)),
+  (NewId is Id + 1),
+  write('Nuevo Indice: '), writeln(NewId),
+  asserta(indice(NewId)),
   guardar.
 
 guardar :-
   tell('./estudiantes.pl'),
   listing(estudiante),
+  listing(indice),
   told.
 

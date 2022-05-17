@@ -1,10 +1,12 @@
-:- dynamic estudiante/5.
+:- dynamic estudiante/6.
 
-estudiante('Nobita', '231.21', dvdv, 4, 'NO DEPRIMIDO').
-estudiante(fbfb, '261vf', vffffff, 18, 'DEPRESION MODERADA').
-estudiante('Pepe', '784jj', sdvdv, 3, 'NO DEPRIMIDO').
-estudiante(fbfbg, fvfv, fvfv, 0, 'NO DEPRIMIDO').
-estudiante('Jefer', '171354', turismo, 6, 'NO DEPRIMIDO').
-estudiante('Kakaroto', '171354', turismo, 6, 'NO DEPRIMIDO').
-estudiante('Frank', '17asdf', sistemas, 6, 'NO DEPRIMIDO').
+estudiante(5, 'Ronnie Van Zant', '159.3578.451', 'Arquitectura', 33, 'DEPRESION MUY SEVERA').
+estudiante(4, 'Pepe Flores', '784.4568', 'Ing Minas', 3, 'NO DEPRIMIDO').
+estudiante(3, 'Pedro Castillo', '5451231', 'Educacion', 10, 'DEPRESION LIGERA/MENOR').
+estudiante(2, 'Jefer Silvestre', '171354', turismo, 6, 'NO DEPRIMIDO').
+estudiante(1, 'Kakar Otto', '456.5171.354', 'Turismo', 6, 'NO DEPRIMIDO').
+
+:- dynamic indice/1.
+
+indice(6).
 
