@@ -43,8 +43,9 @@ start:-
     %new(ImageHome,label(icon,resource(image_home))),
     new(ImageUnasamLicenciada,label(icon,resource(unasam_licenciada))),
 
-    new(BtnIni,button('Usuario_____',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
-    new(IconEnter,label(icon,resource(icon_enter))),
+    new(BtnIni,button('Inicia Test_____',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
+    new(BtnResul,button('Ver Resultados_____',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
+    %new(IconEnter,label(icon,resource(icon_enter))),
 
     send(Home, below, W),
     %send(W,display,ImageHome,point(0,0)),
@@ -53,8 +54,11 @@ start:-
     nueva_imagen(W,unasam_licenciada,450,40),
 
     send(Home,display,BtnIni,point(200,10)),
+    send(Home,display,BtnResul,point(700,10)),
     %send(Home,display,IconEnter,point(255,13)),
-    nueva_imagen(Home,icon_enter,255,14),
+    nueva_imagen(Home,icon_enter,265,14),
+    nueva_imagen(Home,icon_add_user,797,14),
+
     send(Home,background(white)),
     send(Home, open_centered),
     !.
@@ -69,9 +73,9 @@ ventanaUsuario:-
     new(Cuestionario, dialog),
     new(W,  picture('Cuestionario para el paciente', size(1024, 550))),
 
-    new(TxtNombre,text_item('Nombre del estudiante: ')),
-    new(TxtCodigo,text_item('Codigo del estudiante: ')),
-    new(TxtEscuela,text_item('Escuela del estudiante: ')),
+    new(TxtNombre,text_item('Nombre del estudiante ')),
+    new(TxtCodigo,text_item('Codigo del estudiante ')),
+    new(TxtEscuela,text_item('Escuela del estudiante ')),
 
     % Creación de los labeles con los nombres de las preguntas
     pregunta1(Pr1), new(P1,label(nombre, Pr1)),
@@ -152,7 +156,7 @@ ventanaUsuario:-
     
 % ------------------- VENTANA PARA VER RESULTADOS ------------------
 ventanaResultado:-new(Resultado, dialog),
-    new(Wres,  picture('Resultados', size(1024, 550))),
+    new(Wres,  picture('Resultados', size(800, 450))),
     
     new(Tit,label(nombre, 'Resultados almacenados', font('arial',bold,16))),
     
@@ -230,6 +234,28 @@ ventanaResultado:-new(Resultado, dialog),
     new(Id12,label(nombre,12)), new(Nom12,label(nombre,N12)), new(Cod12,label(nombre,C12)), new(Esc12,label(nombre,E12)), new(Sum12,label(nombre,Resp12)), new(Dig12,label(nombre, D12)),
     send(Wres,display,Id12,point(50,420)), send(Wres,display,Nom12,point(100,420)), send(Wres,display,Cod12,point(275,420)), send(Wres,display,Esc12,point(380,420)), send(Wres,display,Sum12,point(500,420)), send(Wres,display,Dig12,point(575,420))
     ; write('no existe')),
+    
+    (estudiante(13,N13,C13,E13,S13,D13)
+    -> string_concat(S13,' de 52',Resp13),
+    new(Id13,label(nombre,13)), new(Nom13,label(nombre,N13)), new(Cod13,label(nombre,C13)), new(Esc13,label(nombre,E13)), new(Sum13,label(nombre,Resp13)), new(Dig13,label(nombre, D13)),
+    send(Wres,display,Id13,point(50,450)), send(Wres,display,Nom13,point(100,450)), send(Wres,display,Cod13,point(275,450)), send(Wres,display,Esc13,point(380,450)), send(Wres,display,Sum13,point(500,450)), send(Wres,display,Dig13,point(575,450))
+    ; write('no existe')),
+    
+    (estudiante(14,N14,C14,E14,S14,D14)
+    -> string_concat(S14,' de 52',Resp14),
+    new(Id14,label(nombre,14)), new(Nom14,label(nombre,N14)), new(Cod14,label(nombre,C14)), new(Esc14,label(nombre,E14)), new(Sum14,label(nombre,Resp14)), new(Dig14,label(nombre, D14)),
+    send(Wres,display,Id14,point(50,480)), send(Wres,display,Nom14,point(100,480)), send(Wres,display,Cod14,point(275,480)), send(Wres,display,Esc14,point(380,480)), send(Wres,display,Sum14,point(500,480)), send(Wres,display,Dig14,point(575,480))
+    ; write('no existe')),
+    
+    (estudiante(15,N15,C15,E15,S15,D15)
+    -> string_concat(S15,' de 52',Resp15),
+    new(Id15,label(nombre,15)), new(Nom15,label(nombre,N15)), new(Cod15,label(nombre,C15)), new(Esc15,label(nombre,E15)), new(Sum15,label(nombre,Resp15)), new(Dig15,label(nombre, D15)),
+    send(Wres,display,Id15,point(50,510)), send(Wres,display,Nom15,point(100,510)), send(Wres,display,Cod15,point(275,510)), send(Wres,display,Esc15,point(380,510)), send(Wres,display,Sum15,point(500,510)), send(Wres,display,Dig15,point(575,510))
+    ; write('no existe')),
+
+    new(BtnRegresar,button('Volver al Inicio',and(message(@prolog, start),message(Wres, destroy)))),
+
+    send(Resultado,display,BtnRegresar,point(50,10)),
             
     send(Resultado, open_centered),
     !.
@@ -288,18 +314,26 @@ resp(Nivel, Suma, Recomendacion, Recom_critico):-
   writeln(I),*/
   new(Respuesta, dialog),
   new(Wd,  picture('Diagnostico del paciente', size(850, 530))),
-  new(Lb1,label(nombre, "Diagnostico:")),
-  new(Lb2,label(nombre, Nivel)),
-  new(Lb3,label(nombre, Suma)),
-  new(Lb4,label(nombre, Recomendacion)),
-  new(Lb5,label(nombre, Recom_critico)),
-  nueva_imagen(Wd, image_dg),
+  new(Lb2,label(nombre, Nivel,font('Arial','bold',14))),
+  new(Lb3,label(nombre, Suma, font('Arial','bold',24))),
+  new(Lb4,label(nombre, Recomendacion,font('Arial','bold',14))),
+  new(Lb5,label(nombre, Recom_critico,font('Arial','bold',12))),
+  
+  new(BtnStart,button('Volver Inicio_____',and(message(@prolog,start),message(Wd, destroy)))),
+  %new(IconEnter,label(icon,resource(icon_enter))),
+
+  nueva_imagen(Wd, image_dg,0,0),
   send(Respuesta, below, Wd),
-  send(Wd,display,Lb1,point(430,40)),
-  send(Wd,display,Lb2,point(430,80)),
-  send(Wd,display,Lb3,point(430,120)),
-  send(Wd,display,Lb4,point(40,250)),
-  send(Wd,display,Lb5,point(40,290)),
+
+  send(Wd,display,Lb2,point(263,183)),
+  send(Wd,display,Lb3,point(410,40)),
+  send(Wd,display,Lb4,point(40,365)),
+  send(Wd,display,Lb5,point(40,470)),
+  send(Lb5,colour(red)),
+
+  send(Respuesta,display,BtnStart,point(400,10)),
+  nueva_imagen(Respuesta,icon_paper,475,14),
+  send(Respuesta,background(white)),
  /* mostrar(I, W, 10, 70),
 
   new(BtnExplica,button('Leer Explicacion',and(message(@prolog, explica, E)))),

@@ -44,7 +44,7 @@ start:-
     new(ImageUnasamLicenciada,label(icon,resource(unasam_licenciada))),
 
     new(BtnIni,button('Inicia Test_____',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
-    new(BtnResul,button('Ver Resultados_____',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
+    new(BtnResul,button('Ver Resultados_____',and(message(@prolog,ventanaResultado),message(W, destroy)))),
     %new(IconEnter,label(icon,resource(icon_enter))),
 
     send(Home, below, W),
