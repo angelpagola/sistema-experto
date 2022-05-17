@@ -43,8 +43,9 @@ start:-
     %new(ImageHome,label(icon,resource(image_home))),
     new(ImageUnasamLicenciada,label(icon,resource(unasam_licenciada))),
 
-    new(BtnIni,button('Usuario_____',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
-    new(IconEnter,label(icon,resource(icon_enter))),
+    new(BtnIni,button('Inicia Test_____',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
+    new(BtnResul,button('Ver Resultados_____',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
+    %new(IconEnter,label(icon,resource(icon_enter))),
 
     send(Home, below, W),
     %send(W,display,ImageHome,point(0,0)),
@@ -53,8 +54,11 @@ start:-
     nueva_imagen(W,unasam_licenciada,450,40),
 
     send(Home,display,BtnIni,point(200,10)),
+    send(Home,display,BtnResul,point(700,10)),
     %send(Home,display,IconEnter,point(255,13)),
-    nueva_imagen(Home,icon_enter,255,14),
+    nueva_imagen(Home,icon_enter,265,14),
+    nueva_imagen(Home,icon_add_user,797,14),
+
     send(Home,background(white)),
     send(Home, open_centered),
     !.
@@ -69,9 +73,9 @@ ventanaUsuario:-
     new(Cuestionario, dialog),
     new(W,  picture('Cuestionario para el paciente', size(1024, 550))),
 
-    new(TxtNombre,text_item('Nombre del estudiante: ')),
-    new(TxtCodigo,text_item('Codigo del estudiante: ')),
-    new(TxtEscuela,text_item('Escuela del estudiante: ')),
+    new(TxtNombre,text_item('Nombre del estudiante ')),
+    new(TxtCodigo,text_item('Codigo del estudiante ')),
+    new(TxtEscuela,text_item('Escuela del estudiante ')),
 
     % Creación de los labeles con los nombres de las preguntas
     pregunta1(Pr1), new(P1,label(nombre, Pr1)),
@@ -204,18 +208,26 @@ resp(Nivel, Suma, Recomendacion, Recom_critico):-
   writeln(I),*/
   new(Respuesta, dialog),
   new(Wd,  picture('Diagnostico del paciente', size(850, 530))),
-  new(Lb1,label(nombre, "Diagnostico:")),
-  new(Lb2,label(nombre, Nivel)),
-  new(Lb3,label(nombre, Suma)),
-  new(Lb4,label(nombre, Recomendacion)),
-  new(Lb5,label(nombre, Recom_critico)),
-  nueva_imagen(Wd, image_dg),
+  new(Lb2,label(nombre, Nivel,font('Arial','bold',14))),
+  new(Lb3,label(nombre, Suma, font('Arial','bold',24))),
+  new(Lb4,label(nombre, Recomendacion,font('Arial','bold',14))),
+  new(Lb5,label(nombre, Recom_critico,font('Arial','bold',12))),
+  
+  new(BtnStart,button('Volver Inicio_____',and(message(@prolog,start),message(Wd, destroy)))),
+  %new(IconEnter,label(icon,resource(icon_enter))),
+
+  nueva_imagen(Wd, image_dg,0,0),
   send(Respuesta, below, Wd),
-  send(Wd,display,Lb1,point(430,40)),
-  send(Wd,display,Lb2,point(430,80)),
-  send(Wd,display,Lb3,point(430,120)),
-  send(Wd,display,Lb4,point(40,250)),
-  send(Wd,display,Lb5,point(40,290)),
+
+  send(Wd,display,Lb2,point(263,183)),
+  send(Wd,display,Lb3,point(410,40)),
+  send(Wd,display,Lb4,point(40,365)),
+  send(Wd,display,Lb5,point(40,470)),
+  send(Lb5,colour(red)),
+
+  send(Respuesta,display,BtnStart,point(400,10)),
+  nueva_imagen(Respuesta,icon_paper,475,14),
+  send(Respuesta,background(white)),
  /* mostrar(I, W, 10, 70),
 
   new(BtnExplica,button('Leer Explicacion',and(message(@prolog, explica, E)))),

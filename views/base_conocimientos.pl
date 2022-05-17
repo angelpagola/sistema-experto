@@ -262,11 +262,11 @@ niveles(3,'DEPRESION SEVERA','Visitar un profesional de salud con urgencia').
 niveles(4,'DEPRESION MUY SEVERA','Visitar un profesional de salud con urgencia y de ser necesario comunicarse al 043-2547').
 
 %%Mensajes de alertaas criticos
-msg_recom(1,'Alerta... Presencia de un posible trastorno de ansiedad asista a un psicologo de la UNASAM porque tiene problemas criticos').
-msg_recom(2,'Alerta... Presenta algun sintoma de ansiedad o nerviosismo, acerquese a un psicologo de la UNASAM').
-msg_recom(3,'Alerta... Usted tiene algún síntoma de ansiedad o nerviosismo por precaucion acerquese a un psicologo de la UNASAM').
-msg_recom(4,'Precaucion... Acerquese a la Oficina de Salud y Unidad de Psicopedagogia de la UNASAM').
-msg_recom(5,'').
+msg_recom(1,'Alerta! Presencia de un posible trastorno de ansiedad asista a un psicologo de la UNASAM porque tiene problemas criticos').
+msg_recom(2,'Alerta! Presenta algun sintoma de ansiedad o nerviosismo, acerquese a un psicologo de la UNASAM').
+msg_recom(3,'Alerta! Usted tiene algún síntoma de ansiedad o nerviosismo por precaucion acerquese a un psicologo de la UNASAM').
+msg_recom(4,'Precaucion! Acerquese a la Oficina de Salud y Unidad de Psicopedagogia de la UNASAM').
+msg_recom(5,'En hora buena! No hay situaciones alarmantes').
 %%%%%%Validacion de cantidad de  4's mayores a 1 por ejemplo una respuesta de intento de suicidio%%%%
 %captura lista resultados y muestra recomendacion extrA
 /*eJEMPLO: recom_criticos([1,2,1,2,1,3,1,4,1,2,3,3,3,2,3,2,0],Mensaje).*/
