@@ -13,27 +13,52 @@ resource(logo3,image,image('escudo_unasam.jpg')).
 resource(logo6,image,image('escudo_unasam.jpg')).
 resource(unasam_licenciada,image,image('unasam_licenciada.jpg')).
 resource(image_home,image,image('image_home.jpg')).
+resource(image_questions,image,image('image_questions.jpg')).
+resource(image_dg,image,image('dg.jpg')).
 %----------------------------------ICONOS---------------------------------------
 resource(icon_enter,image,image('icon_enter.gif')).
+resource(icon_paper,image,image('icon_paper.gif')).
+resource(icon_plus,image,image('icon_plus.gif')).
+resource(icon_stamp,image,image('icon_stamp.gif')).
+resource(icon_add_button,image,image('icon_add_button.gif')).
+resource(icon_add_user,image,image('icon_add_user.gif')).
+resource(icon_add,image,image('icon_add.gif')).
+resource(icon_banned,image,image('icon_banned.gif')).
+resource(icon_bookmark,image,image('icon_bookmark.gif')).
+resource(icon_edit,image,image('icon_edit.gif')).
 
+%---------------------------------MÉTODOS---------------------------------------------
+nueva_imagen(Ventana, Imagen, Width, Height):-
+    new(Figura, figure),
+    new(Bitmap, bitmap(resource(Imagen),@on)),
+    send(Bitmap, name, 1),
+    send(Figura, display, Bitmap),
+    send(Figura, status, 1),
+    send(Ventana, display,Figura,point(Width,Height)).
 
 % --------------------------PARA EL MENU PRINCIPAL------------------------------------
 start:-
     new(Home, dialog),
     new(W,window('Diagnosticador de Depresión', size(1024, 550))),
-    new(ImageHome,label(icon,resource(image_home))),
+    %new(ImageHome,label(icon,resource(image_home))),
     new(ImageUnasamLicenciada,label(icon,resource(unasam_licenciada))),
 
-    new(BtnIni,button('Usuario______',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
-    new(BtnResu,button('Ver resultados',and(message(@prolog,ventanaResultado),message(W, destroy)))),
-    new(IconEnter,label(icon,resource(icon_enter))),
+    new(BtnIni,button('Inicia Test_____',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
+    new(BtnResul,button('Ver Resultados_____',and(message(@prolog,ventanaUsuario),message(W, destroy)))),
+    %new(IconEnter,label(icon,resource(icon_enter))),
 
     send(Home, below, W),
-    send(W,display,ImageHome,point(0,0)),
-    send(W,display,ImageUnasamLicenciada,point(450,40)),
+    %send(W,display,ImageHome,point(0,0)),
+    %send(W,display,ImageUnasamLicenciada,point(450,40)),
+    nueva_imagen(W,image_home,0,0),
+    nueva_imagen(W,unasam_licenciada,450,40),
+
     send(Home,display,BtnIni,point(200,10)),
-    send(Home,display,BtnResu,point(500,10)),
-    send(Home,display,IconEnter,point(255,13)),
+    send(Home,display,BtnResul,point(700,10)),
+    %send(Home,display,IconEnter,point(255,13)),
+    nueva_imagen(Home,icon_enter,265,14),
+    nueva_imagen(Home,icon_add_user,797,14),
+
     send(Home,background(white)),
     send(Home, open_centered),
     !.
@@ -48,9 +73,9 @@ ventanaUsuario:-
     new(Cuestionario, dialog),
     new(W,  picture('Cuestionario para el paciente', size(1024, 550))),
 
-    new(TxtNombre,text_item('Nombre del estudiante: ')),
-    new(TxtCodigo,text_item('Codigo del estudiante: ')),
-    new(TxtEscuela,text_item('Escuela del estudiante: ')),
+    new(TxtNombre,text_item('Nombre del estudiante ')),
+    new(TxtCodigo,text_item('Codigo del estudiante ')),
+    new(TxtEscuela,text_item('Escuela del estudiante ')),
 
     % Creación de los labeles con los nombres de las preguntas
     pregunta1(Pr1), new(P1,label(nombre, Pr1)),
@@ -90,6 +115,7 @@ ventanaUsuario:-
     respuestas(16, Resp16), new(ComboPreg16,menu('Respuesta',cycle)), send_list(ComboPreg16,append, Resp16),
     respuestas(17, Resp17), new(ComboPreg17,menu('Respuesta',cycle)), send_list(ComboPreg17,append, Resp17),
 
+    nueva_imagen(W,image_questions,0,-1150),
     send(Cuestionario, below, W),
 
     % Agregando los labeles y los combos al Dialog
@@ -116,11 +142,14 @@ ventanaUsuario:-
 
     %send(W,display,Imagen2,point(420,0)),
 
-    new(BtnAceptar,button('Obtener Diagnostico',and(message(@prolog,buscarResultado,TxtNombre?selection,TxtCodigo?selection,TxtEscuela?selection,ComboPreg1?selection,ComboPreg2?selection,ComboPreg3?selection,ComboPreg4?selection,ComboPreg5?selection,ComboPreg6?selection,ComboPreg7?selection,ComboPreg8?selection,ComboPreg9?selection,ComboPreg10?selection,ComboPreg11?selection,ComboPreg12?selection,ComboPreg13?selection,ComboPreg14?selection,ComboPreg15?selection,ComboPreg16?selection,ComboPreg17?selection), message(W, destroy)))),
-    new(BtnRegresar,button('Cancelar test',and(message(@prolog, start),message(W, destroy)))),
+    new(BtnAceptar,button('Obtener Diagnostico_____',and(message(@prolog,buscarResultado,TxtNombre?selection,TxtCodigo?selection,TxtEscuela?selection,ComboPreg1?selection,ComboPreg2?selection,ComboPreg3?selection,ComboPreg4?selection,ComboPreg5?selection,ComboPreg6?selection,ComboPreg7?selection,ComboPreg8?selection,ComboPreg9?selection,ComboPreg10?selection,ComboPreg11?selection,ComboPreg12?selection,ComboPreg13?selection,ComboPreg14?selection,ComboPreg15?selection,ComboPreg16?selection,ComboPreg17?selection), message(W, destroy)))),
+    new(BtnRegresar,button('Cancelar_____',and(message(@prolog, start),message(W, destroy)))),
 
-    send(Cuestionario,display,BtnRegresar,point(10,10)),
-    send(Cuestionario,display,BtnAceptar,point(280,10)),
+    send(Cuestionario,display,BtnRegresar,point(200,10)),
+    nueva_imagen(Cuestionario,icon_banned,260,14),
+    send(Cuestionario,display,BtnAceptar,point(700,10)),
+    nueva_imagen(Cuestionario,icon_stamp,827,14),
+    send(Cuestionario,background(white)),
 
     send(Cuestionario, open_centered),
     !.
@@ -284,18 +313,27 @@ resp(Nivel, Suma, Recomendacion, Recom_critico):-
   writeln(R),
   writeln(I),*/
   new(Respuesta, dialog),
-  new(Wd,  picture('Diagnostico del paciente', size(850, 500))),
-  new(Lb1,label(nombre, "Diagnostico:")),
-  new(Lb2,label(nombre, Nivel)),
-  new(Lb3,label(nombre, Suma)),
-  new(Lb4,label(nombre, Recomendacion)),
-  new(Lb5,label(nombre, Recom_critico)),
+  new(Wd,  picture('Diagnostico del paciente', size(850, 530))),
+  new(Lb2,label(nombre, Nivel,font('Arial','bold',14))),
+  new(Lb3,label(nombre, Suma, font('Arial','bold',24))),
+  new(Lb4,label(nombre, Recomendacion,font('Arial','bold',14))),
+  new(Lb5,label(nombre, Recom_critico,font('Arial','bold',12))),
+  
+  new(BtnStart,button('Volver Inicio_____',and(message(@prolog,start),message(Wd, destroy)))),
+  %new(IconEnter,label(icon,resource(icon_enter))),
+
+  nueva_imagen(Wd, image_dg,0,0),
   send(Respuesta, below, Wd),
-  send(Wd,display,Lb1,point(40,40)),
-  send(Wd,display,Lb2,point(40,80)),
-  send(Wd,display,Lb3,point(40,100)),
-  send(Wd,display,Lb4,point(40,140)),
-  send(Wd,display,Lb5,point(40,180)),
+
+  send(Wd,display,Lb2,point(263,183)),
+  send(Wd,display,Lb3,point(410,40)),
+  send(Wd,display,Lb4,point(40,365)),
+  send(Wd,display,Lb5,point(40,470)),
+  send(Lb5,colour(red)),
+
+  send(Respuesta,display,BtnStart,point(400,10)),
+  nueva_imagen(Respuesta,icon_paper,475,14),
+  send(Respuesta,background(white)),
  /* mostrar(I, W, 10, 70),
 
   new(BtnExplica,button('Leer Explicacion',and(message(@prolog, explica, E)))),
