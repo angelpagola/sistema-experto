@@ -22,6 +22,7 @@ estudiante('', '', '', 0, 'NO DEPRIMIDO').
 estudiante('', '', '', 0, 'NO DEPRIMIDO').
 estudiante('', '', '', 0, 'NO DEPRIMIDO').
 estudiante('', '', '', 0, 'NO DEPRIMIDO').
+estudiante('', '', '', 0, 'NO DEPRIMIDO').
 estudiante('', '', '', 19, 'DEPRESION SEVERA').
 estudiante('', '', '', 0, 'NO DEPRIMIDO').
 estudiante('Nobita', '231.21', dvdv, 4, 'NO DEPRIMIDO').
