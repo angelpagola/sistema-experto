@@ -14,6 +14,7 @@ resource(logo6,image,image('escudo_unasam.jpg')).
 resource(unasam_licenciada,image,image('unasam_licenciada.jpg')).
 resource(image_home,image,image('image_home.jpg')).
 resource(image_questions,image,image('image_questions.jpg')).
+resource(image_dg,image,image('dg.jpg')).
 %----------------------------------ICONOS---------------------------------------
 resource(icon_enter,image,image('icon_enter.gif')).
 resource(icon_paper,image,image('icon_paper.gif')).
@@ -202,18 +203,19 @@ resp(Nivel, Suma, Recomendacion, Recom_critico):-
   writeln(R),
   writeln(I),*/
   new(Respuesta, dialog),
-  new(Wd,  picture('Diagnostico del paciente', size(850, 500))),
+  new(Wd,  picture('Diagnostico del paciente', size(850, 530))),
   new(Lb1,label(nombre, "Diagnostico:")),
   new(Lb2,label(nombre, Nivel)),
   new(Lb3,label(nombre, Suma)),
   new(Lb4,label(nombre, Recomendacion)),
   new(Lb5,label(nombre, Recom_critico)),
+  nueva_imagen(Wd, image_dg),
   send(Respuesta, below, Wd),
-  send(Wd,display,Lb1,point(40,40)),
-  send(Wd,display,Lb2,point(40,80)),
-  send(Wd,display,Lb3,point(40,100)),
-  send(Wd,display,Lb4,point(40,140)),
-  send(Wd,display,Lb5,point(40,180)),
+  send(Wd,display,Lb1,point(430,40)),
+  send(Wd,display,Lb2,point(430,80)),
+  send(Wd,display,Lb3,point(430,120)),
+  send(Wd,display,Lb4,point(40,250)),
+  send(Wd,display,Lb5,point(40,290)),
  /* mostrar(I, W, 10, 70),
 
   new(BtnExplica,button('Leer Explicacion',and(message(@prolog, explica, E)))),
