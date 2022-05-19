@@ -1,13 +1,16 @@
 insertar(Elem,Lista,[Elem|Lista]).
 insertar(Elem,[X|Y],[X|Z]):-insertar(Elem,Y,Z).
+
 suma_lista([],0).
 suma_lista([H|Q],Sum):-suma_lista(Q,S1),Sum is H+S1.
 
 contarRep(_,Lista,Veces):-Lista=[], Veces=0.
-contarRep(Elem,Lista,Veces):-Lista=[Cab|Cola], Elem==Cab, contarRep(Elem,Cola,Vez),Veces is Vez+1.
-contarRep(Elem, Lista, Veces):-Lista=[Cab|Cola], Elem\==Cab, contarRep(Elem,Cola,Vez), Veces is Vez.
+contarRep(Elem,Lista,Veces):-Lista=[Cab|Cola],
+Elem==Cab, contarRep(Elem,Cola,Vez),Veces is Vez+1.
+contarRep(Elem, Lista, Veces):-Lista=[Cab|Cola],
+Elem\==Cab, contarRep(Elem,Cola,Vez), Veces is Vez.
 
-/*Probando*/
+/*Preguntas*/
 pregunta1('01. Humor depresivo (tristeza, desesperanza, desamparo, sentimiento de inutilidad)').
 pregunta2('02. Sentimientos de culpa').
 pregunta3('03. Suicidio').
@@ -60,7 +63,7 @@ respuesta7(0,'No hay dificultad').
 respuesta7(1,'Ideas y sentimientos de incapacidad, fatiga o debilidad (trabajos, pasatiempos)').
 respuesta7(2,'Perdida de interes en su actividad (disminucion de la atencion, indecision y vacilacion)').
 respuesta7(3,'Disminucion del tiempo actual dedicado a actividades o disminucion de la productividad').
-respuesta7(4,'Deja de trabajar por la presente enfermedad. Solo se compromete en las pequenas tareas, o no puede realizar estas sin ayuda.').
+respuesta7(4,'Dejo de trabajar por la presente enfermedad. Solo se compromete en las pequenas tareas, o no puede realizar estas sin ayuda.').
 
 respuesta8(0,'Palabra y pensamiento normales').
 respuesta8(1,'Ligero retraso en el habla').
@@ -102,8 +105,7 @@ respuesta14(2,'Grave').
 
 respuesta15(0,'Ausente').
 respuesta15(1,'Preocupado de si mismo (corporalmente)').
-respuesta15(2,'Preocupado por su salud').
-respuesta15(3,'Se lamenta constantemente, solicita ayuda').
+respuesta15(2,'Preocupado por su salud y se lamenta constantemente, solicita ayuda').
 
 respuesta16(0,'Perdida de peso inferior a 500 gr. en una semana').
 respuesta16(1,'Perdida de mas de 500 gr. en una semana').
@@ -128,7 +130,7 @@ respuestas(11, ['Ausente','Ligera','Moderada','Severa','Incapacitante']).
 respuestas(12, ['Ninguno','Perdida del apetito pero come sin necesidad de que lo estimulen.','Sensacion de pesadez en el abdomen','Dificultad en comer si no se le insiste.','Solicita laxantes o medicacion intestinal para sus sintomas gastrointestinales']).
 respuestas(13, ['Ninguno','Pesadez en las extremidades, espalda o cabeza. Dorsalgias. Cefaleas, algias musculares.','Perdida de energia y fatigabilidad. Cualquier sintoma bien definido se clasifica en 2']).
 respuestas(14, ['Ausente','Debil','Grave']).
-respuestas(15, ['Ausente','Preocupado de si mismo (corporalmente)','Preocupado por su salud','Se lamenta constantemente, solicita ayuda']).
+respuestas(15, ['Ausente','Preocupado de si mismo (corporalmente)','Preocupado por su salud y se lamenta constantemente, solicita ayuda']).
 respuestas(16, ['Perdida de peso inferior a 500 gr. en una semana','Perdida de mas de 500 gr. en una semana','Perdida de mas de 1 Kg. en una semana']).
 respuestas(17, ['Se da cuenta que esta deprimido y enfermo','Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentacion, clima, exceso de trabajo, virus, necesidad de descanso, etc. ','No se da cuenta que esta enfermo']).
 
@@ -282,6 +284,7 @@ recom_criticos(Resultados,Recom):-contarRep(0,Resultados,Vez),Vez>0,Vez<18,msg_r
 
 %%%validacion ingresa la suma de los pesos de test y muestra el nivel de depresion y la recomendaciion
 /*Ejemplo: validacion(30,Mensaje,Recomendacion).*/
+
 validacion(Suma,Mensaje,Recomendacion):- Suma>(-1),Suma<8,
 niveles(0,Mensaje,Recomendacion).
 validacion(Suma,Mensaje,Recomendacion):- Suma>7, Suma<14,
@@ -315,4 +318,5 @@ pos(X,[_|R],Pos):-pos(X,R,Pos1),Pos is Pos1+1. */
 
 /* Kakaroto aliancista */
 /*Otro comentario*/
+
 
